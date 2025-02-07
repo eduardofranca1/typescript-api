@@ -1,12 +1,13 @@
 import { MongoClient as Mongo, Db } from "mongodb";
+import { mongodb_database, mongodb_url } from "../config";
 
 export const MongoClient = {
   client: undefined as unknown as Mongo,
   db: undefined as unknown as Db,
 
   async connect(): Promise<void> {
-    const client = new Mongo("mongodb://localhost:27017");
-    const db = client.db("node-api");
+    const client = new Mongo(mongodb_url);
+    const db = client.db(mongodb_database);
 
     this.client = client;
     this.db = db;

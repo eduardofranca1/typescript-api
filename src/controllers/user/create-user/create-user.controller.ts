@@ -1,11 +1,19 @@
 import { Request, Response } from "express";
 import { ICreateUserService } from "../../../services/user/create-user/create-user-impl.service";
+import { injectable, inject } from "tsyringe";
 import { CreateUserSchema } from "../../../schemas";
 
+@injectable()
 export class CreateUserController {
-  constructor(private readonly createUserService: ICreateUserService) {}
+  constructor(
+    @inject("ICreateUserService")
+    private readonly createUserService: ICreateUserService
+  ) {}
 
-  async createUser(request: Request, response: Response) {
+  createUser = async (
+    request: Request<{}, {}, CreateUserSchema>,
+    response: Response
+  ) => {
     try {
       const { name, email, password } = request.body;
       const result = await this.createUserService.createUser({
@@ -13,11 +21,9 @@ export class CreateUserController {
         email,
         password,
       });
-      return result;
-      // response.status(201).json(result);
+      response.status(201).json(result);
     } catch (error: any) {
-      console.log("🚀 ~ CreateUserController ~ createUser ~ error:", error);
       response.status(error.code).json(error.message);
     }
-  }
+  };
 }

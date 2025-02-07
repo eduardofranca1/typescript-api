@@ -1,10 +1,10 @@
+import "reflect-metadata";
+import "./container";
 import express from "express";
-import mongoose from "mongoose";
 import cors from "cors";
-import { config } from "dotenv";
 import swaggerUi from "swagger-ui-express";
 import Routers from "./routes";
-import { mongodbUrl, openapiSpecification } from "./config";
+import { openapiSpecification } from "./config";
 import { MongoClient } from "./database/mongo";
 
 const app = async () => {

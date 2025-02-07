@@ -1,18 +1,17 @@
 import { Router } from "express";
-import { CreateUserRepository } from "../repositories/users/create-user/create-user.repository";
-import { CreateUserService } from "../services/user/create-user/create-user.service";
+import { container } from "tsyringe";
 import { CreateUserController } from "../controllers/user/create-user/create-user.controller";
+import { validateRequest } from "../middlewares/validate-request";
+import { createUserSchema } from "../schemas";
 
 const router = Router();
 
-router.post("/", async (req, res) => {
-  const createUserRepository = new CreateUserRepository();
-  const createUserService = new CreateUserService(createUserRepository);
-  const createUserController = new CreateUserController(createUserService);
+const createUserController = container.resolve(CreateUserController);
 
-  const result = await createUserController.createUser(req, res);
-
-  res.status(201).json(result);
-});
+router.post(
+  "/",
+  validateRequest(createUserSchema, "body"),
+  createUserController.createUser
+);
 
 export default router;

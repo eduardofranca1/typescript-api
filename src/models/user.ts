@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 import moment from "moment-timezone";
 import { genSalt, hashSync } from "bcryptjs";
-import { User as UserSchema } from "../types";
+import { UserSchema } from "../types";
 
 const userSchema = new Schema<UserSchema>({
   name: {
@@ -48,7 +48,7 @@ userSchema.pre("save", async function (next) {
 });
 
 userSchema.pre("updateOne", async function (next) {
-  let user = this;
+  let user: any = this;
 
   if (user._update.password) {
     const salt = await genSalt(10);

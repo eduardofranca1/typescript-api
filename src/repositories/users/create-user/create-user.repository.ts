@@ -1,18 +1,25 @@
+import { injectable } from "tsyringe";
 import { MongoClient } from "../../../database/mongo";
-import { IUserResponse, MongoUser } from "../../../types";
+import { IUserCreatedResponse, MongoUserSchema } from "../../../types";
 import {
   ICreateUserParams,
   ICreateUserRepository,
 } from "./create-user-impl.repository";
+import { hashPassword } from "../../../utils/hash-password";
 
+@injectable()
 export class CreateUserRepository implements ICreateUserRepository {
-  async createUser(params: ICreateUserParams): Promise<IUserResponse> {
-    const { insertedId } = await MongoClient.db
-      .collection("users")
-      .insertOne(params);
+  async createUser(params: ICreateUserParams): Promise<IUserCreatedResponse> {
+    const password = await hashPassword(params.password);
+
+    const { insertedId } = await MongoClient.db.collection("users").insertOne({
+      name: params.name,
+      email: params.email,
+      password: password,
+    });
 
     const user = await MongoClient.db
-      .collection<MongoUser>("users")
+      .collection<MongoUserSchema>("users")
       .findOne({ _id: insertedId });
 
     if (!user) {

@@ -1,10 +1,12 @@
-export interface IUserResponse {
+import { ObjectId } from "mongodb";
+
+export interface IUserCreatedResponse {
   _id: string;
   name: string;
   email: string;
 }
 
-export interface User {
+export interface UserSchema {
   name: string;
   email: string;
   password: string;
@@ -13,7 +15,14 @@ export interface User {
   disabled: boolean;
 }
 
-export interface MongoUser {
+export interface MongoCreateUserSchema {
+  name: string;
+  email: string;
+  password: string;
+}
+
+export interface MongoUserSchema {
+  _id: ObjectId | string;
   name: string;
   email: string;
   password: string;

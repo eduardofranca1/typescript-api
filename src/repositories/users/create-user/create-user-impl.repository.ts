@@ -1,4 +1,4 @@
-import { IUserResponse } from "../../../types";
+import { IUserCreatedResponse } from "../../../types";
 
 export interface ICreateUserParams {
   name: string;
@@ -7,5 +7,5 @@ export interface ICreateUserParams {
 }
 
 export interface ICreateUserRepository {
-  createUser(params: ICreateUserParams): Promise<IUserResponse>;
+  createUser(params: ICreateUserParams): Promise<IUserCreatedResponse>;
 }
