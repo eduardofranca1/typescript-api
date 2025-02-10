@@ -1,5 +1,5 @@
 import { WithId } from "mongodb";
-import { IUserCreatedResponse } from "../types";
+import { IUserResponse } from "../types";
 
 export interface MongoUser {
   name: string;
@@ -10,7 +10,7 @@ export interface MongoUser {
   disabled: boolean;
 }
 
-export const formatUser = (user: WithId<MongoUser>): IUserCreatedResponse => {
+export const formatUser = (user: WithId<MongoUser>): IUserResponse => {
   const { _id, name, email } = user;
   return {
     _id: _id.toHexString(),

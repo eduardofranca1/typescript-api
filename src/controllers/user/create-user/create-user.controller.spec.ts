@@ -5,14 +5,14 @@ import {
   ICreateUserParams,
   ICreateUserRepository,
 } from "../../../repositories/users/create-user/create-user-impl.repository";
-import { IUserCreatedResponse } from "../../../types";
+import { IUserResponse } from "../../../types";
 import { CreateUserController } from "./create-user.controller";
 
 const app = express();
 app.use(express.json());
 
 class CreateUserServiceMock implements ICreateUserRepository {
-  async createUser(params: ICreateUserParams): Promise<IUserCreatedResponse> {
+  async createUser(params: ICreateUserParams): Promise<IUserResponse> {
     return Promise.resolve({
       _id: "user-id",
       name: params.name || "Dudu",

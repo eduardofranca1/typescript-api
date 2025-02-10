@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { inject, injectable } from "tsyringe";
 import { ICreateUserRepository } from "../../../repositories/users/create-user/create-user-impl.repository";
-import { IUserCreatedResponse } from "../../../types";
+import { IUserResponse } from "../../../types";
 import {
   ICreateUserParams,
   ICreateUserService,
@@ -14,7 +14,7 @@ export class CreateUserService implements ICreateUserService {
     private readonly createUserRepository: ICreateUserRepository
   ) {}
 
-  async createUser(params: ICreateUserParams): Promise<IUserCreatedResponse> {
+  async createUser(params: ICreateUserParams): Promise<IUserResponse> {
     const newUser = await this.createUserRepository.createUser(params);
     return newUser;
   }

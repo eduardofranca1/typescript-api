@@ -7,22 +7,23 @@ describe("Create_User_Repository", () => {
   });
 
   afterAll(async () => {
+    await MongoClient.db.collection("users").deleteMany();
     await MongoClient.disconnect();
   });
 
   it("Should create a new user and save in the database.", async () => {
     const repository = new CreateUserRepository();
 
-    const data = {
+    const mockUser = {
       name: "Dudu",
       email: "dudu@email.com",
       password: "123456",
     };
 
-    const result = await repository.createUser(data);
+    const result = await repository.createUser(mockUser);
 
     expect(result).toHaveProperty("_id");
-    expect(result.name).toBe(data.name);
-    expect(result.email).toBe(data.email);
+    expect(result.name).toBe(mockUser.name);
+    expect(result.email).toBe(mockUser.email);
   });
 });

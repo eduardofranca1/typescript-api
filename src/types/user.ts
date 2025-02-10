@@ -1,9 +1,19 @@
 import { ObjectId } from "mongodb";
 
-export interface IUserCreatedResponse {
+export interface IUserResponse {
   _id: string;
   name: string;
   email: string;
+}
+
+export interface IUser {
+  _id: ObjectId | string;
+  name: string;
+  email: string;
+  password: string;
+  disabled: boolean;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface UserSchema {
@@ -13,12 +23,6 @@ export interface UserSchema {
   createdAt: string;
   updatedAt: string;
   disabled: boolean;
-}
-
-export interface MongoCreateUserSchema {
-  name: string;
-  email: string;
-  password: string;
 }
 
 export interface MongoUserSchema {
@@ -31,13 +35,7 @@ export interface MongoUserSchema {
   disabled: boolean;
 }
 
-export interface UpdateUser {
+export interface IUpdateUser {
   name: string;
   email: string;
-}
-
-export interface CreateUser {
-  name: string;
-  email: string;
-  password: string;
 }
