@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { inject, injectable } from "tsyringe";
 import { ICreateUserRepository } from "../../../repositories/users/create-user/create-user-impl.repository";
 import { IUserCreatedResponse } from "../../../types";

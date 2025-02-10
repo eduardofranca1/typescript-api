@@ -1,4 +1,4 @@
 export * from "./request/id";
-export * from "./user/createUser";
-export * from "./user/updateUser";
-export * from "./user/updatePassword";
+export * from "./user/create-user";
+export * from "./user/update-user";
+export * from "./user/update-user-password";

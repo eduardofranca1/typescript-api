@@ -1,4 +1,6 @@
+import "reflect-metadata";
 import { injectable } from "tsyringe";
+import moment from "moment";
 import { MongoClient } from "../../../database/mongo";
 import { IUserCreatedResponse, MongoUserSchema } from "../../../types";
 import {
@@ -11,11 +13,14 @@ import { hashPassword } from "../../../utils/hash-password";
 export class CreateUserRepository implements ICreateUserRepository {
   async createUser(params: ICreateUserParams): Promise<IUserCreatedResponse> {
     const password = await hashPassword(params.password);
+    const createdAt = moment().format("YYYY-MM-DDTHH:mm:ss");
 
     const { insertedId } = await MongoClient.db.collection("users").insertOne({
       name: params.name,
       email: params.email,
       password: password,
+      disabled: false,
+      createdAt: createdAt,
     });
 
     const user = await MongoClient.db
