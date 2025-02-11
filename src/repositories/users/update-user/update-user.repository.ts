@@ -9,15 +9,9 @@ import { MongoClient } from "../../../database/mongo";
 @injectable()
 export class UpdateUserRepository implements IUpdateUserRepository {
   async updateUser(id: string, params: IUpdateUser): Promise<IUserResponse> {
-    const user = await MongoClient.db
-      .collection<MongoUserSchema>("users")
-      .findOne({ _id: new ObjectId(id) });
-
-    if (!user) throw new Error("User not found");
-
     const updatedAt = moment().format("YYYY-MM-DDTHH:mm:ss");
 
-    const data = {
+    const dataToUpdate = {
       name: params.name,
       email: params.email,
       updatedAt,
@@ -25,11 +19,11 @@ export class UpdateUserRepository implements IUpdateUserRepository {
 
     await MongoClient.db
       .collection<MongoUserSchema>("users")
-      .updateOne({ _id: user._id }, { $set: { data } });
+      .updateOne({ _id: new ObjectId(id) }, { $set: { ...dataToUpdate } });
 
     const newUser = await MongoClient.db
       .collection<MongoUserSchema>("users")
-      .findOne({ _id: user._id });
+      .findOne({ _id: new ObjectId(id) });
 
     if (!newUser) throw new Error("User not found");
 
@@ -37,6 +31,8 @@ export class UpdateUserRepository implements IUpdateUserRepository {
       _id: newUser._id.toString(),
       name: newUser.name,
       email: newUser.email,
+      createdAt: newUser.createdAt,
+      updatedAt: newUser.updatedAt,
     };
   }
 }

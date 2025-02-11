@@ -8,14 +8,8 @@ import { MongoUserSchema } from "../../../types";
 @injectable()
 export class DeleteUserRepository implements IDeleteUserRepository {
   async deleteUser(id: string): Promise<void> {
-    const user = await MongoClient.db
-      .collection<MongoUserSchema>("users")
-      .findOne({ _id: new ObjectId(id) });
-
-    if (!user) throw new Error("User not found");
-
     await MongoClient.db
       .collection<MongoUserSchema>("users")
-      .deleteOne({ _id: user._id });
+      .deleteOne({ _id: new ObjectId(id) });
   }
 }

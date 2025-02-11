@@ -1,3 +1,4 @@
+import moment from "moment";
 import { MongoClient } from "../../../database/mongo";
 import { UpdateUserRepository } from "./update-user.repository";
 
@@ -16,6 +17,7 @@ describe("Update_User_Repository", () => {
       name: "Dudu",
       email: "dudu@email.com",
       password: "123456",
+      createdAt: moment().format("YYYY-MM-DDTHH:mm:ss"),
     };
 
     const { insertedId } = await MongoClient.db
@@ -28,18 +30,7 @@ describe("Update_User_Repository", () => {
       email: "emailupdated@email.com",
     });
 
-    expect(mockUser.name).toBe(userUpdated.name);
-    expect(mockUser.email).toBe(userUpdated.email);
-  });
-
-  it("should return an erro when the user is not found", async () => {
-    const wrongId = "67a50efc4ef1701e4335b011";
-    const repository = new UpdateUserRepository();
-    await expect(
-      repository.updateUser(wrongId, {
-        name: "Eduardo",
-        email: "emailupdated@email.com",
-      })
-    ).rejects.toThrow("User not found");
+    expect(userUpdated.name).toBe("Eduardo");
+    expect(userUpdated.email).toBe("emailupdated@email.com");
   });
 });

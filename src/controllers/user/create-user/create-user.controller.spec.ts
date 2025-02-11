@@ -17,6 +17,8 @@ class CreateUserServiceMock implements ICreateUserRepository {
       _id: "user-id",
       name: params.name || "Dudu",
       email: params.email || "dudu@email.com",
+      createdAt: "2025-02-11T08:00:00",
+      updatedAt: null,
     });
   }
 }
@@ -27,13 +29,15 @@ app.post("/users", controller.createUser);
 
 describe("Create_User_Controller", () => {
   it("should return 201 status and user response", async () => {
-    const mockUserResponse = {
+    const payload = {
       _id: "user-id",
       name: "Dudu",
       email: "dudu@email.com",
+      createdAt: "2025-02-11T08:00:00",
+      updatedAt: null,
     };
-    const response = await request(app).post("/users").send(mockUserResponse);
+    const response = await request(app).post("/users").send(payload);
     expect(response.status).toBe(201);
-    expect(response.body).toEqual(mockUserResponse);
+    expect(response.body).toEqual(payload);
   });
 });

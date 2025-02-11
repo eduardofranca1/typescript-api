@@ -1,3 +1,4 @@
+import moment from "moment";
 import { MongoClient } from "../../../database/mongo";
 import { CreateUserRepository } from "./create-user.repository";
 
@@ -13,7 +14,6 @@ describe("Create_User_Repository", () => {
 
   it("Should create a new user and save in the database.", async () => {
     const repository = new CreateUserRepository();
-
     const mockUser = {
       name: "Dudu",
       email: "dudu@email.com",
@@ -25,5 +25,7 @@ describe("Create_User_Repository", () => {
     expect(result).toHaveProperty("_id");
     expect(result.name).toBe(mockUser.name);
     expect(result.email).toBe(mockUser.email);
+    expect(result).toHaveProperty("createdAt");
+    expect(result).toHaveProperty("updatedAt");
   });
 });

@@ -7,6 +7,7 @@ describe("Delete_User_Repository", () => {
   });
 
   afterAll(async () => {
+    await MongoClient.db.collection("users").deleteMany();
     await MongoClient.disconnect();
   });
 
@@ -26,13 +27,5 @@ describe("Delete_User_Repository", () => {
     await expect(
       repository.deleteUser(insertedId.toHexString())
     ).resolves.toBeUndefined();
-  });
-
-  it("should return an erro when the user is not found", async () => {
-    const wrongId = "67a50efc4ef1701e4335b011";
-    const repository = new DeleteUserRepository();
-    await expect(repository.deleteUser(wrongId)).rejects.toThrow(
-      "User not found"
-    );
   });
 });

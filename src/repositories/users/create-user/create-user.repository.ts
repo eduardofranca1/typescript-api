@@ -19,7 +19,6 @@ export class CreateUserRepository implements ICreateUserRepository {
       name: params.name,
       email: params.email,
       password: password,
-      disabled: false,
       createdAt: createdAt,
       updatedAt: null,
     });
@@ -36,6 +35,8 @@ export class CreateUserRepository implements ICreateUserRepository {
       _id: user._id.toString(),
       name: user.name,
       email: user.email,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt,
     };
   }
 }

@@ -8,6 +8,7 @@ describe("Create_User_Service", () => {
   });
 
   afterAll(async () => {
+    await MongoClient.db.collection("users").deleteMany();
     await MongoClient.disconnect();
   });
 
@@ -26,5 +27,8 @@ describe("Create_User_Service", () => {
     expect(result).toHaveProperty("_id");
     expect(result.name).toBe(data.name);
     expect(result.email).toBe(data.email);
+    expect(result).toHaveProperty("createdAt");
+    expect(result).toHaveProperty("updatedAt");
+    expect(result.updatedAt).toBeNull();
   });
 });

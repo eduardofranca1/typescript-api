@@ -1,5 +1,5 @@
 import { IUserResponse } from "../../../types";
 
-export interface IGetUsersRepository {
+export interface IGetUsersService {
   getUsers(): Promise<IUserResponse[]>;
 }
