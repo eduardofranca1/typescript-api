@@ -1,4 +1,3 @@
-import moment from "moment";
 import { MongoClient } from "../../../database/mongo";
 import { CreateUserRepository } from "./create-user.repository";
 

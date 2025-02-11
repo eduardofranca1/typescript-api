@@ -1,5 +1,5 @@
 import { MongoClient } from "../../../database/mongo";
-import { CreateUserRepository } from "../../../repositories/users/create-user/create-user.repository";
+import { CreateUserRepository } from "../../../repositories/user/create-user/create-user.repository";
 import { CreateUserService } from "./create-user.service";
 
 describe("Create_User_Service", () => {

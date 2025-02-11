@@ -1,5 +1,5 @@
 import { MongoClient } from "../../../database/mongo";
-import { GetUserRepository } from "../../../repositories/users/get-user/get-user.repository";
+import { GetUserRepository } from "../../../repositories/user/get-user/get-user.repository";
 import { GetUserService } from "./get-user.service";
 
 describe("Get_User_Service", () => {
@@ -30,5 +30,12 @@ describe("Get_User_Service", () => {
     expect(result).toHaveProperty("createdAt");
     expect(result).toHaveProperty("updatedAt");
     expect(result.updatedAt).toBeNull();
+  });
+
+  it("should return an erro when the user is not found", async () => {
+    const wrongId = "67a50efc4ef1701e4335b011";
+    const repository = new GetUserRepository();
+    const service = new GetUserService(repository);
+    await expect(service.getUser(wrongId)).rejects.toThrow("User not found");
   });
 });

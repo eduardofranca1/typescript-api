@@ -7,13 +7,21 @@ import { IGetUserRepository } from "./get-user-impl.repository";
 
 @injectable()
 export class GetUserRepository implements IGetUserRepository {
-  async getUser(id: string): Promise<IUserResponse> {
+  async getUser(id: string): Promise<IUserResponse | null> {
     const result = await MongoClient.db
       .collection<MongoUserSchema>("users")
       .findOne({ _id: new ObjectId(id) });
 
-    if (!result) throw new Error("User not found");
+    if (result) {
+      return {
+        _id: result._id,
+        name: result.name,
+        email: result.email,
+        createdAt: result.createdAt,
+        updatedAt: result.updatedAt,
+      };
+    }
 
-    return result;
+    return null;
   }
 }

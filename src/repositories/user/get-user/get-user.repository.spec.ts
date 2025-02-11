@@ -25,13 +25,7 @@ describe("Get_User_Repository", () => {
     const repository = new GetUserRepository();
     const result = await repository.getUser(insertedId.toHexString());
     expect(result).toHaveProperty("_id");
-    expect(result.name).toBe(mockUser.name);
-    expect(result.email).toBe(mockUser.email);
-  });
-
-  it("should return an erro when the user is not found", async () => {
-    const wrongId = "67a50efc4ef1701e4335b011";
-    const repository = new GetUserRepository();
-    await expect(repository.getUser(wrongId)).rejects.toThrow("User not found");
+    expect(result!.name).toBe(mockUser.name);
+    expect(result!.email).toBe(mockUser.email);
   });
 });

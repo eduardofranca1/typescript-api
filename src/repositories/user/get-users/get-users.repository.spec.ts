@@ -13,14 +13,14 @@ describe("Get_Users_Repository", () => {
 
   it("should return a user list", async () => {
     const mockUserOne = {
-      name: "Dudu",
-      email: "dudu@email.com",
+      name: "Curry",
+      email: "curry@email.com",
       password: "123456",
     };
 
     const mockUserTwo = {
-      name: "Du",
-      email: "du@email.com",
+      name: "Stephen",
+      email: "stephen@email.com",
       password: "123456",
     };
 

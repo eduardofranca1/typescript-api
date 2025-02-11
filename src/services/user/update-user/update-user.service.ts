@@ -4,7 +4,7 @@ import { MongoClient } from "../../../database/mongo";
 import { IUpdateUser, IUserResponse, MongoUserSchema } from "../../../types";
 import { IUpdateUserService } from "./update-user-impl.service";
 import { inject, injectable } from "tsyringe";
-import { IUpdateUserRepository } from "../../../repositories/users/update-user/update-user-impl.repository";
+import { IUpdateUserRepository } from "../../../repositories/user/update-user/update-user-impl.repository";
 
 @injectable()
 export class UpdateUserService implements IUpdateUserService {

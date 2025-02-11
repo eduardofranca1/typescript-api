@@ -1,5 +1,5 @@
 import { MongoClient } from "../../../database/mongo";
-import { UpdateUserRepository } from "../../../repositories/users/update-user/update-user.repository";
+import { UpdateUserRepository } from "../../../repositories/user/update-user/update-user.repository";
 import { UpdateUserService } from "./update-user.service";
 
 describe("Update_User_Service", () => {

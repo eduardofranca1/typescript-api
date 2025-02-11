@@ -2,11 +2,12 @@ import "reflect-metadata";
 import { injectable } from "tsyringe";
 import moment from "moment";
 import { MongoClient } from "../../../database/mongo";
-import { IUserResponse, MongoUserSchema } from "../../../types";
 import {
   ICreateUserParams,
-  ICreateUserRepository,
-} from "./create-user-impl.repository";
+  IUserResponse,
+  MongoUserSchema,
+} from "../../../types";
+import { ICreateUserRepository } from "./create-user-impl.repository";
 import { hashPassword } from "../../../utils/hash-password";
 
 @injectable()

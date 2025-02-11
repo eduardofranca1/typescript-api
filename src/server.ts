@@ -3,7 +3,7 @@ import "./container";
 import express from "express";
 import cors from "cors";
 import swaggerUi from "swagger-ui-express";
-import Routers from "./routes";
+import Routers from "./routes/routes";
 import { openapiSpecification } from "./config";
 import { MongoClient } from "./database/mongo";
 

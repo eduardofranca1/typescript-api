@@ -1,6 +1,6 @@
 import moment from "moment";
 import { MongoClient } from "../../../database/mongo";
-import { DeleteUserRepository } from "../../../repositories/users/delete-user/delete-user.repository";
+import { DeleteUserRepository } from "../../../repositories/user/delete-user/delete-user.repository";
 import { DeleteUserService } from "./delete-user.service";
 
 describe("Delete_User_Service", () => {

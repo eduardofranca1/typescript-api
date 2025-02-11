@@ -1,17 +1,14 @@
 import "reflect-metadata";
 import request from "supertest";
 import express from "express";
-import {
-  ICreateUserParams,
-  ICreateUserRepository,
-} from "../../../repositories/users/create-user/create-user-impl.repository";
-import { IUserResponse } from "../../../types";
+import { ICreateUserParams, IUserResponse } from "../../../types";
 import { CreateUserController } from "./create-user.controller";
+import { ICreateUserService } from "../../../services/user/create-user/create-user-impl.service";
 
 const app = express();
 app.use(express.json());
 
-class CreateUserServiceMock implements ICreateUserRepository {
+class CreateUserServiceMock implements ICreateUserService {
   async createUser(params: ICreateUserParams): Promise<IUserResponse> {
     return Promise.resolve({
       _id: "user-id",

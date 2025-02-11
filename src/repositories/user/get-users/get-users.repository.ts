@@ -11,6 +11,15 @@ export class GetUsersRepository implements IGetUsersRepository {
       .collection<MongoUserSchema>("users")
       .find({})
       .toArray();
-    return result;
+
+    const formatResult = result.map((user) => ({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt,
+    }));
+
+    return formatResult;
   }
 }

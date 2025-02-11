@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { inject, injectable } from "tsyringe";
 import { IDeleteUserService } from "./delete-user-impl.service";
-import { IDeleteUserRepository } from "../../../repositories/users/delete-user/delete-user-impl.repository";
+import { IDeleteUserRepository } from "../../../repositories/user/delete-user/delete-user-impl.repository";
 import { MongoClient } from "../../../database/mongo";
 import { MongoUserSchema } from "../../../types";
 import { ObjectId } from "mongodb";
