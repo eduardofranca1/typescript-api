@@ -1,5 +1,5 @@
-import { MongoClient } from "../../../database/mongo";
-import { DeleteUserRepository } from "./delete-user.repository";
+import { MongoClient } from "../../../../../src/database/mongo";
+import { DeleteUserRepository } from "../../../../../src/repositories/user/delete-user/delete-user.repository";
 
 describe("Delete_User_Repository", () => {
   beforeAll(async () => {

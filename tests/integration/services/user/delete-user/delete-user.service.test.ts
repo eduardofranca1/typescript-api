@@ -1,7 +1,7 @@
 import moment from "moment";
-import { MongoClient } from "../../../database/mongo";
-import { DeleteUserRepository } from "../../../repositories/user/delete-user/delete-user.repository";
-import { DeleteUserService } from "./delete-user.service";
+import { MongoClient } from "../../../../../src/database/mongo";
+import { DeleteUserRepository } from "../../../../../src/repositories/user/delete-user/delete-user.repository";
+import { DeleteUserService } from "../../../../../src/services/user/delete-user/delete-user.service";
 
 describe("Delete_User_Service", () => {
   beforeAll(async () => {

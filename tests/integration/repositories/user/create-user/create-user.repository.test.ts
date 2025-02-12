@@ -1,5 +1,5 @@
-import { MongoClient } from "../../../database/mongo";
-import { CreateUserRepository } from "./create-user.repository";
+import { MongoClient } from "../../../../../src/database/mongo";
+import { CreateUserRepository } from "../../../../../src/repositories/user/create-user/create-user.repository";
 
 describe("Create_User_Repository", () => {
   beforeAll(async () => {

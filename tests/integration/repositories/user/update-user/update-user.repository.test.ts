@@ -1,6 +1,6 @@
 import moment from "moment";
-import { MongoClient } from "../../../database/mongo";
-import { UpdateUserRepository } from "./update-user.repository";
+import { MongoClient } from "../../../../../src/database/mongo";
+import { UpdateUserRepository } from "../../../../../src/repositories/user/update-user/update-user.repository";
 
 describe("Update_User_Repository", () => {
   beforeAll(async () => {

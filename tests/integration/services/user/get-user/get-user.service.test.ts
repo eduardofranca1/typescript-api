@@ -1,6 +1,6 @@
-import { MongoClient } from "../../../database/mongo";
-import { GetUserRepository } from "../../../repositories/user/get-user/get-user.repository";
-import { GetUserService } from "./get-user.service";
+import { MongoClient } from "../../../../../src/database/mongo";
+import { GetUserRepository } from "../../../../../src/repositories/user/get-user/get-user.repository";
+import { GetUserService } from "../../../../../src/services/user/get-user/get-user.service";
 
 describe("Get_User_Service", () => {
   beforeAll(async () => {

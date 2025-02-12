@@ -1,9 +1,9 @@
 import "reflect-metadata";
 import request from "supertest";
 import express from "express";
-import { IGetUsersService } from "../../../services/user/get-users/get-users-impl.service";
-import { IUserResponse } from "../../../types";
-import { GetUsersController } from "./get-users.controller";
+import { IGetUsersService } from "../../../../../src/services/user/get-users/get-users-impl.service";
+import { IUserResponse } from "../../../../../src/types";
+import { GetUsersController } from "../../../../../src/controllers/user/get-users/get-users.controller";
 
 const app = express();
 app.use(express.json());
@@ -26,8 +26,8 @@ const controller = new GetUsersController(new GetUsersServiceMock());
 
 app.get("/users", controller.getUsers);
 
-describe("Get_Users_Controller", () => {
-  it("should return 200 status and a user list", async () => {
+describe("Get_Users_Controller_Integration_Test", () => {
+  it("should test integration with express server, router and return 200 status and a user list", async () => {
     const response = await request(app).get("/users");
 
     expect(response.status).toBe(200);

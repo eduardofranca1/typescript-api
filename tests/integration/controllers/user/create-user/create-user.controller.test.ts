@@ -1,9 +1,9 @@
 import "reflect-metadata";
 import request from "supertest";
 import express from "express";
-import { ICreateUserParams, IUserResponse } from "../../../types";
-import { CreateUserController } from "./create-user.controller";
-import { ICreateUserService } from "../../../services/user/create-user/create-user-impl.service";
+import { ICreateUserService } from "../../../../../src/services/user/create-user/create-user-impl.service";
+import { ICreateUserParams, IUserResponse } from "../../../../../src/types";
+import { CreateUserController } from "../../../../../src/controllers/user/create-user/create-user.controller";
 
 const app = express();
 app.use(express.json());
@@ -24,8 +24,8 @@ const controller = new CreateUserController(new CreateUserServiceMock());
 
 app.post("/users", controller.createUser);
 
-describe("Create_User_Controller", () => {
-  it("should return 201 status and user response", async () => {
+describe("Create_User_Controller_Integration_Test", () => {
+  it("should test integration with express server, router and return 201 status and user response", async () => {
     const payload = {
       _id: "user-id",
       name: "Dudu",
