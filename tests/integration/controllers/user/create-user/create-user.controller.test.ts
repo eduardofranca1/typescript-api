@@ -11,7 +11,7 @@ app.use(express.json());
 class CreateUserServiceMock implements ICreateUserService {
   async createUser(params: ICreateUserParams): Promise<IUserResponse> {
     return Promise.resolve({
-      _id: "user-id",
+      _id: "67a50efc4ef1701e4335b011",
       name: params.name || "Dudu",
       email: params.email || "dudu@email.com",
       createdAt: "2025-02-11T08:00:00",
@@ -25,16 +25,21 @@ const controller = new CreateUserController(new CreateUserServiceMock());
 app.post("/users", controller.createUser);
 
 describe("Create_User_Controller_Integration_Test", () => {
-  it("should test integration with express server, router and return 201 status and user response", async () => {
+  it("should test integration with Express server and router, returning 201 status and user response", async () => {
     const payload = {
-      _id: "user-id",
-      name: "Dudu",
-      email: "dudu@email.com",
+      name: "Curry",
+      email: "curry@email.com",
       createdAt: "2025-02-11T08:00:00",
       updatedAt: null,
     };
     const response = await request(app).post("/users").send(payload);
     expect(response.status).toBe(201);
-    expect(response.body).toEqual(payload);
+    expect(response.body).toEqual({
+      _id: "67a50efc4ef1701e4335b011",
+      name: "Curry",
+      email: "curry@email.com",
+      createdAt: "2025-02-11T08:00:00",
+      updatedAt: null,
+    });
   });
 });

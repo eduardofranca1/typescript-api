@@ -15,7 +15,7 @@ export class DeleteUserController {
   ) => {
     try {
       await this.deleteUserService.deleteUser(request.params.id);
-      response.status(204).json("OK");
+      response.sendStatus(204);
     } catch (error: any) {
       response.status(error.code).json(error.message);
     }
