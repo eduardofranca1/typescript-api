@@ -14,8 +14,8 @@ describe("Update_User_Repository", () => {
 
   it("should update a user", async () => {
     const mockUser = {
-      name: "Dudu",
-      email: "dudu@email.com",
+      name: "Curry",
+      email: "curry@email.com",
       password: "123456",
       createdAt: moment().format("YYYY-MM-DDTHH:mm:ss"),
     };
@@ -26,11 +26,11 @@ describe("Update_User_Repository", () => {
 
     const repository = new UpdateUserRepository();
     const userUpdated = await repository.updateUser(insertedId.toHexString(), {
-      name: "Eduardo",
-      email: "emailupdated@email.com",
+      name: "Stephen",
+      email: "stephen@email.com",
     });
 
-    expect(userUpdated.name).toBe("Eduardo");
-    expect(userUpdated.email).toBe("emailupdated@email.com");
+    expect(userUpdated.name).toBe("Stephen");
+    expect(userUpdated.email).toBe("stephen@email.com");
   });
 });

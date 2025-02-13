@@ -19,7 +19,7 @@ Nesse projeto é utilizado princípios SOLID, Dependency Injection and Repositor
 - Data Validation using [Zod](https://zod.dev/)
 - CRUD User
 
-### How to execute:
+### How to run the project
 
 - **npm install** (to install node modules)
 - **npm run dev** (to start the server)
