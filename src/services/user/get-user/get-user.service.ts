@@ -3,6 +3,8 @@ import { inject, injectable } from "tsyringe";
 import { IUserResponse } from "../../../types";
 import { IGetUserService } from "./get-user-impl.service";
 import { IGetUserRepository } from "../../../repositories/user/get-user/get-user-impl.repository";
+import { HttpException } from "../../../exceptions/exception";
+import { HttpEnumStatusCode } from "../../../exceptions/http-status-code";
 
 @injectable()
 export class GetUserService implements IGetUserService {
@@ -11,8 +13,10 @@ export class GetUserService implements IGetUserService {
     private readonly getUserRepository: IGetUserRepository
   ) {}
   async getUser(id: string): Promise<IUserResponse> {
-    const result = await this.getUserRepository.getUser(id);
-    if (!result) throw new Error("User not found");
-    return result;
+    const user = await this.getUserRepository.getUser(id);
+    if (!user) {
+      throw new HttpException("User not found", HttpEnumStatusCode.NOT_FOUND);
+    }
+    return user;
   }
 }
