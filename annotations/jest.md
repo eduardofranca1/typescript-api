@@ -10,6 +10,31 @@
 
   - usamos o jest.Mocked para dizer ao Jest que queremos transformar a instância do UpdateUserRepository em um mock (uma versão simulada) da classe. Isso significa que todos os métodos da classe UpdateUserRepository (como updateUser) podem ser "sobrescritos" (mockados) com comportamentos específicos para os nossos testes.
 
+- **jest.spyOn()**
+
+  - método jest.spyOn do Jest "espiona" uma função específica de um objeto e permite que você monitore suas chamadas e modifique seu comportamento. Ele é muito útil para testes unitários, pois permite mockar apenas métodos específicos sem alterar o restante da classe ou objeto.
+  - ✅ Mockar métodos sem alterar a classe original
+  - ✅ Permite monitorar chamadas (quantas vezes o método foi chamado, com quais argumentos, etc.)
+  - ✅ Útil para testes unitários, isolando apenas o método que queremos testar
+
+**EXEMPLO jest.spyOn()**
+
+O que acontece aqui?
+
+1. Espiona (spyOn) o método createUser da instância service.
+2. Mocka (mockResolvedValue) para que, quando createUser for chamado, ele retorne um valor simulado (um objeto usuário no caso).
+3. Evita a execução real do código dentro de createUser, substituindo-a pela resposta mockada.
+
+```ts
+jest.spyOn(service, "createUser").mockResolvedValue({
+  _id: "67a50efc4ef1701e4335b011",
+  name: "Stephen",
+  email: "stephen@email.com",
+  createdAt: "2025-02-11T08:00:00",
+  updatedAt: null,
+});
+```
+
 ```ts
 describe("Get_User_Controller_Unit_Test", () => {
   /**

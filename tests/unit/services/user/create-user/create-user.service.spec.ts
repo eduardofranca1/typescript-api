@@ -1,11 +1,11 @@
 import { CreateUserRepository } from "../../../../../src/repositories/user/create-user/create-user.repository";
+import { CreateUserService } from "../../../../../src/services/user/create-user/create-user.service";
 
-describe("Create_User_Repository_Unit_Test", () => {
+describe("Create_User_Service_Unit_Test", () => {
   it("should return created user response", async () => {
-    const repository =
-      new CreateUserRepository() as jest.Mocked<CreateUserRepository>;
+    const service = new CreateUserService({} as CreateUserRepository);
 
-    repository.createUser = jest.fn().mockReturnValue({
+    jest.spyOn(service, "createUser").mockResolvedValue({
       _id: "67a50efc4ef1701e4335b011",
       name: "Stephen",
       email: "stephen@email.com",
@@ -13,7 +13,7 @@ describe("Create_User_Repository_Unit_Test", () => {
       updatedAt: null,
     });
 
-    const result = await repository.createUser({
+    const result = await service.createUser({
       name: "Stephen",
       email: "stephen@email.com",
       password: "123456",

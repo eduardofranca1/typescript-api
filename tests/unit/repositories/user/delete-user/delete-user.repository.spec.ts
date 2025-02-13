@@ -5,7 +5,7 @@ describe("Delete_User_Repository_Unit_Test", () => {
     const repository =
       new DeleteUserRepository() as jest.Mocked<DeleteUserRepository>;
 
-    repository.deleteUser = jest.fn().mockResolvedValue(Promise.resolve());
+    repository.deleteUser = jest.fn().mockResolvedValue(undefined);
 
     await expect(repository.deleteUser("user-id")).resolves.toBeUndefined();
   });
