@@ -1,4 +1,6 @@
 import { genSalt, hash } from "bcryptjs";
+import { HttpException } from "../exceptions/exception";
+import { HttpEnumStatusCode } from "../exceptions/http-status-code";
 
 export const hashPassword = async (password: string) => {
   try {
@@ -6,6 +8,9 @@ export const hashPassword = async (password: string) => {
     const hashPassword = await hash(password, salt);
     return hashPassword;
   } catch (error) {
-    console.log("🚀 ~ hashPassword ~ error:", error);
+    throw new HttpException(
+      "Error encrypting password",
+      HttpEnumStatusCode.SERVER_ERROR
+    );
   }
 };

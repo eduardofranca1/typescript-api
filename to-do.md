@@ -1,1 +1,0 @@
-tratamento de error

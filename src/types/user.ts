@@ -8,15 +8,6 @@ export interface IUserResponse {
   updatedAt: string | null;
 }
 
-export interface UserSchema {
-  name: string;
-  email: string;
-  password: string;
-  createdAt: string;
-  updatedAt: string;
-  disabled: boolean;
-}
-
 export interface MongoUserSchema {
   _id: ObjectId | string;
   name: string;
@@ -35,4 +26,9 @@ export interface ICreateUserParams {
   name: string;
   email: string;
   password: string;
+}
+
+export interface IUpdateUserPassword {
+  oldPassword: string;
+  newPassword: string;
 }

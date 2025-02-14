@@ -14,9 +14,6 @@ const options = {
     },
     tags: [
       {
-        name: "Auth",
-      },
-      {
         name: "User",
       },
     ],
@@ -28,21 +25,9 @@ const options = {
     ],
     components: {
       schemas: {
-        login: {
-          type: "object",
-          required: ["email", "password"],
-          properties: {
-            email: {
-              type: "string",
-            },
-            password: {
-              type: "string",
-            },
-          },
-        },
         createUser: {
           type: "object",
-          required: ["name", "email", "password"],
+          required: ["name", "email", "password", "confirmPassword"],
           properties: {
             name: {
               type: "string",
