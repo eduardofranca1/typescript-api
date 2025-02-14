@@ -1,6 +1,6 @@
 # Node REST API
 
-Nesse projeto é utilizado princípios SOLID, Dependency Injection and Repository Pattern
+This project was created using TypeScript, SOLID principles, and the Repository Pattern
 
 ### Technologies:
 
