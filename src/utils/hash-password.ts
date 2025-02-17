@@ -8,9 +8,6 @@ export const hashPassword = async (password: string) => {
     const hashPassword = await hash(password, salt);
     return hashPassword;
   } catch (error) {
-    throw new HttpException(
-      "Error encrypting password",
-      HttpEnumStatusCode.SERVER_ERROR
-    );
+    throw new HttpException("Server error", HttpEnumStatusCode.SERVER_ERROR);
   }
 };

@@ -9,7 +9,7 @@ export const compareHashPassword = async (
   const result = await compare(password, hashPassword);
   if (!result)
     throw new HttpException(
-      "Password don't match",
+      "Passwords don't match",
       HttpEnumStatusCode.BAD_REQUEST
     );
 };

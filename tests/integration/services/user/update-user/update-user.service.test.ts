@@ -13,16 +13,12 @@ describe("Update_User_Service", () => {
   });
 
   it("should update a user", async () => {
-    const user = {
+    const { insertedId } = await MongoClient.db.collection("users").insertOne({
       name: "Curry",
       email: "curry@email.com",
       password: "123456",
       createdAt: "2025-02-11T08:00:00",
-    };
-
-    const { insertedId } = await MongoClient.db
-      .collection("users")
-      .insertOne(user);
+    });
 
     const repository = new UpdateUserRepository();
     const service = new UpdateUserService(repository);

@@ -9,10 +9,10 @@ import { MongoClient } from "../../../database/mongo";
 import { HttpException } from "../../../exceptions/exception";
 
 @injectable()
-export class UpdateUserPassword implements IUpdateUserPasswordService {
+export class UpdateUserPasswordService implements IUpdateUserPasswordService {
   constructor(
-    @inject("IGetUserService")
-    private readonly getUserService: IGetUserService,
+    // @inject("IGetUserService")
+    // private readonly getUserService: IGetUserService,
 
     @inject("IUpdateUserPasswordRepository")
     private readonly updateUserPasswordRepository: IUpdateUserPasswordRepository
