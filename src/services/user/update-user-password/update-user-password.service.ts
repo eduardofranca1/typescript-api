@@ -3,7 +3,6 @@ import { ObjectId } from "mongodb";
 import { IUpdateUserPassword } from "../../../types";
 import { IUpdateUserPasswordService } from "./update-user-password-impl.service";
 import { IUpdateUserPasswordRepository } from "../../../repositories/user/update-user-password/update-user-password.repository";
-import { IGetUserService } from "../get-user/get-user-impl.service";
 import { compareHashPassword } from "../../../utils/compare-hash-password";
 import { MongoClient } from "../../../database/mongo";
 import { HttpException } from "../../../exceptions/exception";

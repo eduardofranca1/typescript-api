@@ -2,7 +2,7 @@ import "reflect-metadata";
 import request from "supertest";
 import express from "express";
 import { IUserResponse } from "../../../../../src/types";
-import { IGetUserService } from "../../../../../src/services/user/get-user/get-user-impl.service";
+import { IGetUserService } from "../../../../../src/services/user/get-user/get-user.service";
 import { GetUserController } from "../../../../../src/controllers/user/get-user/get-user.controller";
 
 const app = express();

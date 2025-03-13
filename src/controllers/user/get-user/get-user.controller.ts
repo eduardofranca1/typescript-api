@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { inject, injectable } from "tsyringe";
-import { IGetUserService } from "../../../services/user/get-user/get-user-impl.service";
+import { IGetUserService } from "../../../services/user/get-user/get-user.service";
 import { RequestIdSchema } from "../../../schemas";
 
 @injectable()

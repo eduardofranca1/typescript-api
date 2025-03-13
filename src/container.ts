@@ -2,12 +2,8 @@ import "reflect-metadata";
 import { container } from "tsyringe";
 import { IGetUsersService } from "./services/user/get-users/get-users-impl.service";
 import { GetUsersService } from "./services/user/get-users/get-users.service";
-import { GetUserService } from "./services/user/get-user/get-user.service";
-import { IGetUserService } from "./services/user/get-user/get-user-impl.service";
 import { IUpdateUserService } from "./services/user/update-user/update-user-impl.service";
 import { UpdateUserService } from "./services/user/update-user/update-user.service";
-import { IDeleteUserService } from "./services/user/delete-user/delete-user-impl.service";
-import { DeleteUserService } from "./services/user/delete-user/delete-user.service";
 import { IUpdateUserPasswordService } from "./services/user/update-user-password/update-user-password-impl.service";
 import { UpdateUserPasswordService } from "./services/user/update-user-password/update-user-password.service";
 import { ICreateUserRepository } from "./repositories/user/create-user/create-user.repository";
@@ -24,6 +20,10 @@ import { IUpdateUserPasswordRepository } from "./repositories/user/update-user-p
 import { UpdateUserPasswordRepository } from "./repositories/user/update-user-password/update-user-password-impl.repository";
 import { ICreateUserService } from "./services/user/create-user/create-user.service";
 import { CreateUserService } from "./services/user/create-user/create-user-impl.service";
+import { IDeleteUserService } from "./services/user/delete-user/delete-user.service";
+import { DeleteUserService } from "./services/user/delete-user/delete-user-impl.service";
+import { IGetUserService } from "./services/user/get-user/get-user.service";
+import { GetUserService } from "./services/user/get-user/get-user-impl.service";
 
 container.register<ICreateUserRepository>("ICreateUserRepository", {
   useClass: CreateUserRepository,

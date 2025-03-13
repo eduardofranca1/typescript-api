@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { Request, Response } from "express";
-import { IGetUserService } from "../../../../../src/services/user/get-user/get-user-impl.service";
+import { IGetUserService } from "../../../../../src/services/user/get-user/get-user.service";
 import { IUserResponse } from "../../../../../src/types";
 import { GetUserController } from "../../../../../src/controllers/user/get-user/get-user.controller";
 import { RequestIdSchema } from "../../../../../src/schemas";
