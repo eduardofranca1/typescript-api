@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { inject, injectable } from "tsyringe";
-import { IDeleteUserService } from "../../../services/user/delete-user/delete-user-impl.service";
+import { IDeleteUserService } from "../../../services/user/delete-user/delete-user.service";
 import { RequestIdSchema } from "../../../schemas";
 
 @injectable()
