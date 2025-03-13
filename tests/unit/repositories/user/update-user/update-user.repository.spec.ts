@@ -1,4 +1,4 @@
-import { UpdateUserRepository } from "../../../../../src/repositories/user/update-user/update-user.repository";
+import { UpdateUserRepository } from "../../../../../src/repositories/user/update-user/update-user-impl.repository";
 
 describe("Update_User_Repository_Unit_Test", () => {
   it("should return updated user response", async () => {

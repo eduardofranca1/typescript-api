@@ -8,8 +8,6 @@ import { GetUserService } from "./services/user/get-user/get-user.service";
 import { IGetUserService } from "./services/user/get-user/get-user-impl.service";
 import { IUpdateUserService } from "./services/user/update-user/update-user-impl.service";
 import { UpdateUserService } from "./services/user/update-user/update-user.service";
-import { IUpdateUserRepository } from "./repositories/user/update-user/update-user-impl.repository";
-import { UpdateUserRepository } from "./repositories/user/update-user/update-user.repository";
 import { IDeleteUserService } from "./services/user/delete-user/delete-user-impl.service";
 import { DeleteUserService } from "./services/user/delete-user/delete-user.service";
 
@@ -25,6 +23,8 @@ import { IGetUserRepository } from "./repositories/user/get-user/get-user.reposi
 import { GetUserRepository } from "./repositories/user/get-user/get-user-impl.repository";
 import { IGetUsersRepository } from "./repositories/user/get-users/get-users.repository";
 import { GetUsersRepository } from "./repositories/user/get-users/get-users-impl.repository";
+import { IUpdateUserRepository } from "./repositories/user/update-user/update-user.repository";
+import { UpdateUserRepository } from "./repositories/user/update-user/update-user-impl.repository";
 
 container.register<ICreateUserRepository>("ICreateUserRepository", {
   useClass: CreateUserRepository,

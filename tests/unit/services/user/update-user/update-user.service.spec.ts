@@ -1,4 +1,4 @@
-import { UpdateUserRepository } from "../../../../../src/repositories/user/update-user/update-user.repository";
+import { UpdateUserRepository } from "../../../../../src/repositories/user/update-user/update-user-impl.repository";
 import { UpdateUserService } from "../../../../../src/services/user/update-user/update-user.service";
 
 describe("Update_User_Service_Unit_Test", () => {
