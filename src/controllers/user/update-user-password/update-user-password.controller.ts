@@ -1,6 +1,6 @@
 import { inject, injectable } from "tsyringe";
 import { Request, Response } from "express";
-import { IUpdateUserPasswordService } from "../../../services/user/update-user-password/update-user-password-impl.service";
+import { IUpdateUserPasswordService } from "../../../services/user/update-user-password/update-user-password.service";
 import { RequestIdSchema, UpdatePasswordSchema } from "../../../schemas";
 
 @injectable()

@@ -1,6 +1,6 @@
 import { MongoClient } from "../../../../../src/database/mongo";
 import { UpdateUserPasswordRepository } from "../../../../../src/repositories/user/update-user-password/update-user-password-impl.repository";
-import { UpdateUserPasswordService } from "../../../../../src/services/user/update-user-password/update-user-password.service";
+import { UpdateUserPasswordService } from "../../../../../src/services/user/update-user-password/update-user-password-impl.service";
 import { hashPassword } from "../../../../../src/utils/hash-password";
 
 describe("Update_User_Password_Service_Integration_Test", () => {

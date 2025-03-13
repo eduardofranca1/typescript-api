@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import request from "supertest";
 import express from "express";
-import { IUpdateUserPasswordService } from "../../../../../src/services/user/update-user-password/update-user-password-impl.service";
+import { IUpdateUserPasswordService } from "../../../../../src/services/user/update-user-password/update-user-password.service";
 import { IUpdateUserPassword } from "../../../../../src/types";
 import { UpdateUserPasswordController } from "../../../../../src/controllers/user/update-user-password/update-user-password.controller";
 

@@ -1,7 +1,5 @@
 import "reflect-metadata";
 import { container } from "tsyringe";
-import { IUpdateUserPasswordService } from "./services/user/update-user-password/update-user-password-impl.service";
-import { UpdateUserPasswordService } from "./services/user/update-user-password/update-user-password.service";
 import { ICreateUserRepository } from "./repositories/user/create-user/create-user.repository";
 import { CreateUserRepository } from "./repositories/user/create-user/create-user-impl.repository";
 import { IDeleteUserRepository } from "./repositories/user/delete-user/delete-user.repository";
@@ -24,6 +22,8 @@ import { IGetUsersService } from "./services/user/get-users/get-users.service";
 import { GetUsersService } from "./services/user/get-users/get-users-impl.service";
 import { IUpdateUserService } from "./services/user/update-user/update-user.service";
 import { UpdateUserService } from "./services/user/update-user/update-user-impl.service";
+import { IUpdateUserPasswordService } from "./services/user/update-user-password/update-user-password.service";
+import { UpdateUserPasswordService } from "./services/user/update-user-password/update-user-password-impl.service";
 
 container.register<ICreateUserRepository>("ICreateUserRepository", {
   useClass: CreateUserRepository,
