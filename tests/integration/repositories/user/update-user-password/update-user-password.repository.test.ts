@@ -1,6 +1,6 @@
 import moment from "moment";
 import { MongoClient } from "../../../../../src/database/mongo";
-import { UpdateUserPasswordRepository } from "../../../../../src/repositories/user/update-user-password/update-user-password.repository";
+import { UpdateUserPasswordRepository } from "../../../../../src/repositories/user/update-user-password/update-user-password-impl.repository";
 
 describe("Update_User_Password_Integration_Test", () => {
   beforeAll(async () => {

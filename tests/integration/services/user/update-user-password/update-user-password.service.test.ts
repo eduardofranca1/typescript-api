@@ -1,5 +1,5 @@
 import { MongoClient } from "../../../../../src/database/mongo";
-import { UpdateUserPasswordRepository } from "../../../../../src/repositories/user/update-user-password/update-user-password.repository";
+import { UpdateUserPasswordRepository } from "../../../../../src/repositories/user/update-user-password/update-user-password-impl.repository";
 import { UpdateUserPasswordService } from "../../../../../src/services/user/update-user-password/update-user-password.service";
 import { hashPassword } from "../../../../../src/utils/hash-password";
 
