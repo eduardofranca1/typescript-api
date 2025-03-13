@@ -1,5 +1,5 @@
 import { MongoClient } from "../../../../../src/database/mongo";
-import { GetUsersRepository } from "../../../../../src/repositories/user/get-users/get-users.repository";
+import { GetUsersRepository } from "../../../../../src/repositories/user/get-users/get-users-impl.repository";
 import { GetUsersService } from "../../../../../src/services/user/get-users/get-users.service";
 
 describe("Get_Users_Service", () => {

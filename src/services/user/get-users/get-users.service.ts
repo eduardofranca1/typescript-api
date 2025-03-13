@@ -2,7 +2,7 @@ import "reflect-metadata";
 import { inject, injectable } from "tsyringe";
 import { IGetUsersService } from "./get-users-impl.service";
 import { IUserResponse } from "../../../types";
-import { IGetUsersRepository } from "../../../repositories/user/get-users/get-users-impl.repository";
+import { IGetUsersRepository } from "../../../repositories/user/get-users/get-users.repository";
 
 @injectable()
 export class GetUsersService implements IGetUsersService {
