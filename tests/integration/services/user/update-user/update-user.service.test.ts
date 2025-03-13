@@ -1,6 +1,6 @@
 import { MongoClient } from "../../../../../src/database/mongo";
 import { UpdateUserRepository } from "../../../../../src/repositories/user/update-user/update-user-impl.repository";
-import { UpdateUserService } from "../../../../../src/services/user/update-user/update-user.service";
+import { UpdateUserService } from "../../../../../src/services/user/update-user/update-user-impl.service";
 
 describe("Update_User_Service", () => {
   beforeAll(async () => {

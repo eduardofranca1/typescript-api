@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { Request, Response } from "express";
-import { IUpdateUserService } from "../../../../../src/services/user/update-user/update-user-impl.service";
+import { IUpdateUserService } from "../../../../../src/services/user/update-user/update-user.service";
 import { IUpdateUser, IUserResponse } from "../../../../../src/types";
 import { CreateUserSchema, RequestIdSchema } from "../../../../../src/schemas";
 import { UpdateUserController } from "../../../../../src/controllers/user/update-user/update-user.controller";

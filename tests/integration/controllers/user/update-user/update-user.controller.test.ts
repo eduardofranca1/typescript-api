@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import request from "supertest";
 import express from "express";
-import { IUpdateUserService } from "../../../../../src/services/user/update-user/update-user-impl.service";
+import { IUpdateUserService } from "../../../../../src/services/user/update-user/update-user.service";
 import { IUpdateUser, IUserResponse } from "../../../../../src/types";
 import { UpdateUserController } from "../../../../../src/controllers/user/update-user/update-user.controller";
 
