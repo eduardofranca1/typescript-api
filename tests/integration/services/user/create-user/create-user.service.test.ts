@@ -1,6 +1,6 @@
 import { MongoClient } from "../../../../../src/database/mongo";
-import { CreateUserRepository } from "../../../../../src/repositories/user/create-user/create-user.repository";
 import { CreateUserService } from "../../../../../src/services/user/create-user/create-user.service";
+import { CreateUserRepository } from "../../../../../src/repositories/user/create-user/create-user-impl.repository";
 
 describe("Create_User_Service", () => {
   beforeAll(async () => {

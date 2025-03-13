@@ -1,4 +1,4 @@
-import { CreateUserRepository } from "../../../../../src/repositories/user/create-user/create-user.repository";
+import { CreateUserRepository } from "../../../../../src/repositories/user/create-user/create-user-impl.repository";
 
 describe("Create_User_Repository_Unit_Test", () => {
   it("should return created user response", async () => {
