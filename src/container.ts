@@ -16,14 +16,15 @@ import { IUpdateUserRepository } from "./repositories/user/update-user/update-us
 import { UpdateUserRepository } from "./repositories/user/update-user/update-user.repository";
 import { IDeleteUserService } from "./services/user/delete-user/delete-user-impl.service";
 import { DeleteUserService } from "./services/user/delete-user/delete-user.service";
-import { IDeleteUserRepository } from "./repositories/user/delete-user/delete-user-impl.repository";
-import { DeleteUserRepository } from "./repositories/user/delete-user/delete-user.repository";
+
 import { IUpdateUserPasswordRepository } from "./repositories/user/update-user-password/update-user-password-impl.repository";
 import { UpdateUserPasswordRepository } from "./repositories/user/update-user-password/update-user-password.repository";
 import { IUpdateUserPasswordService } from "./services/user/update-user-password/update-user-password-impl.service";
 import { UpdateUserPasswordService } from "./services/user/update-user-password/update-user-password.service";
 import { ICreateUserRepository } from "./repositories/user/create-user/create-user.repository";
 import { CreateUserRepository } from "./repositories/user/create-user/create-user-impl.repository";
+import { IDeleteUserRepository } from "./repositories/user/delete-user/delete-user.repository";
+import { DeleteUserRepository } from "./repositories/user/delete-user/delete-user-impl.repository";
 
 container.register<ICreateUserRepository>("ICreateUserRepository", {
   useClass: CreateUserRepository,

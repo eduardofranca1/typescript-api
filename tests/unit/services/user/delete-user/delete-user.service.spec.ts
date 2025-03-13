@@ -1,4 +1,4 @@
-import { DeleteUserRepository } from "../../../../../src/repositories/user/delete-user/delete-user.repository";
+import { DeleteUserRepository } from "../../../../../src/repositories/user/delete-user/delete-user-impl.repository";
 import { DeleteUserService } from "../../../../../src/services/user/delete-user/delete-user.service";
 
 describe("Delete_User_Service_Unit_Test", () => {

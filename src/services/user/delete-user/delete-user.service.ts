@@ -2,11 +2,11 @@ import "reflect-metadata";
 import { inject, injectable } from "tsyringe";
 import { ObjectId } from "mongodb";
 import { IDeleteUserService } from "./delete-user-impl.service";
-import { IDeleteUserRepository } from "../../../repositories/user/delete-user/delete-user-impl.repository";
 import { MongoClient } from "../../../database/mongo";
 import { MongoUserSchema } from "../../../types";
 import { HttpException } from "../../../exceptions/exception";
 import { HttpEnumStatusCode } from "../../../exceptions/http-status-code";
+import { IDeleteUserRepository } from "../../../repositories/user/delete-user/delete-user.repository";
 
 @injectable()
 export class DeleteUserService implements IDeleteUserService {

@@ -1,4 +1,4 @@
-import { DeleteUserRepository } from "../../../../../src/repositories/user/delete-user/delete-user.repository";
+import { DeleteUserRepository } from "../../../../../src/repositories/user/delete-user/delete-user-impl.repository";
 
 describe("Delete_User_Repository_Unit_Test", () => {
   it("should return void", async () => {
