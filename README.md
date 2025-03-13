@@ -10,12 +10,15 @@ This project was created using TypeScript, SOLID principles, and Design Patterns
 - [Jest](https://jestjs.io/)
 - [MongoDB](https://www.mongodb.com/)
 - [Zod](https://zod.dev/)
+- [TSyringe](https://github.com/microsoft/tsyringe)
 
 ### Topics
 
 - SOLID
 - Dependecy Injection
 - Repository Pattern
+- Unit Tests
+- Integration Tests
 - Data Validation using [Zod](https://zod.dev/)
 - CRUD User
 
