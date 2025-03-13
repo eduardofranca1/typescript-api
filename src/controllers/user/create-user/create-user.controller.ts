@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { injectable, inject } from "tsyringe";
-import { ICreateUserService } from "../../../services/user/create-user/create-user-impl.service";
+import { ICreateUserService } from "../../../services/user/create-user/create-user.service";
 import { CreateUserSchema } from "../../../schemas";
 
 @injectable()

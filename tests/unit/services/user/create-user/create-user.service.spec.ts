@@ -1,4 +1,4 @@
-import { CreateUserService } from "../../../../../src/services/user/create-user/create-user.service";
+import { CreateUserService } from "../../../../../src/services/user/create-user/create-user-impl.service";
 import { CreateUserRepository } from "../../../../repositories/user/create-user/create-user-impl.repository";
 
 describe("Create_User_Service_Unit_Test", () => {

@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import request from "supertest";
 import express from "express";
-import { ICreateUserService } from "../../../../../src/services/user/create-user/create-user-impl.service";
+import { ICreateUserService } from "../../../../../src/services/user/create-user/create-user.service";
 import { ICreateUserParams, IUserResponse } from "../../../../../src/types";
 import { CreateUserController } from "../../../../../src/controllers/user/create-user/create-user.controller";
 
