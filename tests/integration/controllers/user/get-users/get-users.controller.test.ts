@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import request from "supertest";
 import express from "express";
-import { IGetUsersService } from "../../../../../src/services/user/get-users/get-users-impl.service";
+import { IGetUsersService } from "../../../../../src/services/user/get-users/get-users.service";
 import { IUserResponse } from "../../../../../src/types";
 import { GetUsersController } from "../../../../../src/controllers/user/get-users/get-users.controller";
 

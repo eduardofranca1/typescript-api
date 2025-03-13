@@ -1,6 +1,6 @@
 import { inject, injectable } from "tsyringe";
 import { Request, Response } from "express";
-import { IGetUsersService } from "../../../services/user/get-users/get-users-impl.service";
+import { IGetUsersService } from "../../../services/user/get-users/get-users.service";
 
 @injectable()
 export class GetUsersController {
