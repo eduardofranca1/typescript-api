@@ -2,7 +2,7 @@ import "reflect-metadata";
 import { inject, injectable } from "tsyringe";
 import { IUserResponse } from "../../../types";
 import { IGetUserService } from "./get-user-impl.service";
-import { IGetUserRepository } from "../../../repositories/user/get-user/get-user-impl.repository";
+import { IGetUserRepository } from "../../../repositories/user/get-user/get-user.repository";
 import { HttpException } from "../../../exceptions/exception";
 import { HttpEnumStatusCode } from "../../../exceptions/http-status-code";
 

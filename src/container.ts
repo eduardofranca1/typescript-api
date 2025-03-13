@@ -6,9 +6,7 @@ import { IGetUsersRepository } from "./repositories/user/get-users/get-users-imp
 import { GetUsersRepository } from "./repositories/user/get-users/get-users.repository";
 import { IGetUsersService } from "./services/user/get-users/get-users-impl.service";
 import { GetUsersService } from "./services/user/get-users/get-users.service";
-import { IGetUserRepository } from "./repositories/user/get-user/get-user-impl.repository";
 import { GetUserService } from "./services/user/get-user/get-user.service";
-import { GetUserRepository } from "./repositories/user/get-user/get-user.repository";
 import { IGetUserService } from "./services/user/get-user/get-user-impl.service";
 import { IUpdateUserService } from "./services/user/update-user/update-user-impl.service";
 import { UpdateUserService } from "./services/user/update-user/update-user.service";
@@ -25,6 +23,8 @@ import { ICreateUserRepository } from "./repositories/user/create-user/create-us
 import { CreateUserRepository } from "./repositories/user/create-user/create-user-impl.repository";
 import { IDeleteUserRepository } from "./repositories/user/delete-user/delete-user.repository";
 import { DeleteUserRepository } from "./repositories/user/delete-user/delete-user-impl.repository";
+import { IGetUserRepository } from "./repositories/user/get-user/get-user.repository";
+import { GetUserRepository } from "./repositories/user/get-user/get-user-impl.repository";
 
 container.register<ICreateUserRepository>("ICreateUserRepository", {
   useClass: CreateUserRepository,

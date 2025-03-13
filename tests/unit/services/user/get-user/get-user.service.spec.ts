@@ -1,4 +1,4 @@
-import { GetUserRepository } from "../../../../../src/repositories/user/get-user/get-user.repository";
+import { GetUserRepository } from "../../../../../src/repositories/user/get-user/get-user-impl.repository";
 import { GetUserService } from "../../../../../src/services/user/get-user/get-user.service";
 
 describe("Get_User_Service_Unit_Test", () => {

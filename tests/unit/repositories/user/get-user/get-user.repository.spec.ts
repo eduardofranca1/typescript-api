@@ -1,4 +1,4 @@
-import { GetUserRepository } from "../../../../../src/repositories/user/get-user/get-user.repository";
+import { GetUserRepository } from "../../../../../src/repositories/user/get-user/get-user-impl.repository";
 
 describe("Get_User_Repository_Unit_Test", () => {
   it("should return a user got by id", async () => {
