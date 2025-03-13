@@ -1,6 +1,6 @@
 # Node REST API
 
-This project was created using TypeScript, SOLID principles, and the Repository Pattern
+This project was created using TypeScript, SOLID principles, and Design Patterns
 
 ### Technologies:
 
