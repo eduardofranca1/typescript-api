@@ -2,9 +2,7 @@ import "reflect-metadata";
 import "./container";
 import express from "express";
 import cors from "cors";
-import swaggerUi from "swagger-ui-express";
 import Routers from "./routes/routes";
-import { openapiSpecification } from "./config";
 import { MongoClient } from "./database/mongo";
 
 const app = async () => {
@@ -14,12 +12,6 @@ const app = async () => {
   server.use(cors());
   server.use(express.urlencoded({ extended: true }));
   server.use(express.json());
-
-  server.use(
-    "/api-docs",
-    swaggerUi.serve,
-    swaggerUi.setup(openapiSpecification)
-  );
 
   server.use(Routers);
 

@@ -3,7 +3,7 @@ import {
   mongodb_database,
   mongodb_database_test,
   mongodb_url,
-} from "../config";
+} from "../config/envs";
 
 export const MongoClient = {
   client: undefined as unknown as Mongo,
