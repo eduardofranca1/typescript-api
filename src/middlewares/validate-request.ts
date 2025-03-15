@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { ZodSchema } from "zod";
 
-type ErrorZod = {
+interface ErrorZod {
   message: string;
   path: string[];
   code: string;
@@ -9,25 +9,18 @@ type ErrorZod = {
   type: string;
   inclusive: boolean;
   exact: boolean;
-};
+}
 
-type HandleErrors = {
+interface HandleErrors {
   message: string;
   path: string[];
-};
+}
 
-const handleErrors = (errorsZod: ErrorZod[]) => {
-  const errors: HandleErrors[] = [];
-
-  errorsZod.forEach((error) => {
-    errors.push({
-      message: error.message,
-      path: error.path,
-    });
-  });
-
-  return errors;
-};
+export const handleErrors = (errorsZod: ErrorZod[]): HandleErrors[] =>
+  errorsZod.map((error) => ({
+    message: error.message,
+    path: error.path,
+  }));
 
 export const validateRequest =
   (schema: ZodSchema<any>, requestType: "body" | "params" | "query") =>
