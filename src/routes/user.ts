@@ -64,7 +64,13 @@ router.put(
   "/update-password/:id",
   extractZodErrors(requestIdSchema, "params"),
   extractZodErrors(updatePasswordSchema, "body"),
-  updateUserPasswordController.updatePassword
+  async (req, res) => {
+    const response = await updateUserPasswordController.handle({
+      params: req.params,
+      body: req.body,
+    });
+    res.status(response.statusCode).json(response.body);
+  }
 );
 
 router.delete(

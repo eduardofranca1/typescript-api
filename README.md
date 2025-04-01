@@ -1,4 +1,4 @@
-# Node REST API
+# TypeScript API
 
 This project was created using TypeScript, SOLID principles, and Design Patterns.
 

@@ -1,24 +1,28 @@
-import { Request, Response } from "express";
 import { IUpdateUserPasswordService } from "../../services/user/update-user-password/update-user-password.service";
-import { RequestIdSchema, UpdatePasswordSchema } from "../../schemas";
+import { Controller, IHttpRequest, IHttpResponse } from "../controller";
+import { IUpdateUserPassword } from "../../models/user";
+import { badRequest, error, ok } from "../../helpers/helpers";
 
-export class UpdateUserPasswordController {
+export class UpdateUserPasswordController implements Controller {
   constructor(
     private readonly updateUserPasswordService: IUpdateUserPasswordService
   ) {}
 
-  updatePassword = async (
-    request: Request<RequestIdSchema, {}, UpdatePasswordSchema>,
-    response: Response
-  ) => {
+  async handle(
+    request: IHttpRequest<IUpdateUserPassword>
+  ): Promise<IHttpResponse<string>> {
     try {
+      const { body } = request;
+      if (!body) {
+        return badRequest("Please specify the body");
+      }
       await this.updateUserPasswordService.updatePassword(request.params.id, {
-        newPassword: request.body.newPassword,
-        oldPassword: request.body.oldPassword,
+        newPassword: body.newPassword,
+        oldPassword: body.oldPassword,
       });
-      response.status(200).json("OK");
-    } catch (error: any) {
-      response.status(error.code).json(error.message);
+      return ok("ok");
+    } catch (err: any) {
+      return error(err.code, err.message);
     }
-  };
+  }
 }
