@@ -32,3 +32,19 @@ This project was created using TypeScript, SOLID principles, and Design Patterns
 - **npm run dev** (to start the server)
 - **npm run build** (to build the project)
 - **npm run test** (to run the tests)
+
+# Routes
+
+Here are the routes that have already been created:
+
+### Users
+
+| `/users`   |                              |                       |     |
+| ---------- | ---------------------------- | --------------------- | --- |
+| **Method** | **Route**                    | **Description**       |
+| POST       | `/users`                     | create a new user     |
+| GET        | `/users/get-user/:id`        | get one user by id    |
+| GET        | `/users`                     | get all users         |
+| PUT        | `/users/:id`                 | update one user       |
+| PUT        | `/users/update-password/:id` | update user password  |
+| DELETE     | `/users/:id`                 | delete one user by id |
