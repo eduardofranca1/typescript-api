@@ -15,6 +15,11 @@ export const created = <T extends IUserResponse>(
   body,
 });
 
+export const noCotent = (): IHttpResponse<null> => ({
+  statusCode: 204,
+  body: null,
+});
+
 export const badRequest = (message: string): IHttpResponse<string> => {
   return {
     statusCode: 400,

@@ -1,18 +1,17 @@
-import { Request, Response } from "express";
 import { IDeleteUserService } from "../../services/user/delete-user/delete-user.service";
-import { RequestIdSchema } from "../../schemas";
+import { Controller, IHttpRequest, IHttpResponse } from "../controller";
+import { error, noCotent } from "../../helpers/helpers";
 
-export class DeleteUserController {
+export class DeleteUserController implements Controller {
   constructor(private readonly deleteUserService: IDeleteUserService) {}
-  deleteUser = async (
-    request: Request<RequestIdSchema>,
-    response: Response
-  ) => {
+  async handle(
+    request: IHttpRequest<{ id: string }>
+  ): Promise<IHttpResponse<any>> {
     try {
       await this.deleteUserService.deleteUser(request.params.id);
-      response.sendStatus(204);
-    } catch (error: any) {
-      response.status(error.code).json(error.message);
+      return noCotent();
+    } catch (err: any) {
+      return error(err.code, err.message);
     }
-  };
+  }
 }

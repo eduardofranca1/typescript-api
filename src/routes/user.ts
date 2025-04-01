@@ -70,7 +70,10 @@ router.put(
 router.delete(
   "/:id",
   extractZodErrors(requestIdSchema, "params"),
-  deleteUserController.deleteUser
+  async (req, res) => {
+    const response = await deleteUserController.handle({ params: req.params });
+    res.status(response.statusCode).json(response.body);
+  }
 );
 
 export default router;

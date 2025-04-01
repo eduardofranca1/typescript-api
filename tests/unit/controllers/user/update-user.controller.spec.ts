@@ -1,9 +1,7 @@
-import { Request, Response } from "express";
-import { IUpdateUserService } from "../../../../../src/services/user/update-user/update-user.service";
-import { IUpdateUser, IUserResponse } from "../../../../../src/models/user";
-import { CreateUserSchema, RequestIdSchema } from "../../../../../src/schemas";
-import { UpdateUserController } from "../../../../../src/controllers/user/update-user.controller";
-import { IHttpRequest } from "../../../../controllers/controller";
+import { IUpdateUserService } from "../../../../src/services/user/update-user/update-user.service";
+import { IUpdateUser, IUserResponse } from "../../../../src/models/user";
+import { UpdateUserController } from "../../../../src/controllers/user/update-user.controller";
+import { IHttpRequest } from "../../../controllers/controller";
 
 const makeUpdateHttpRequest = (
   id: string,
