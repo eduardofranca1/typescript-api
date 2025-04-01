@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { container } from "tsyringe";
 import { extractZodErrors } from "../middlewares/validate-request";
 import {
   createUserSchema,
@@ -7,8 +6,6 @@ import {
   updatePasswordSchema,
   updateUserSchema,
 } from "../schemas";
-import { UpdateUserController } from "../controllers/user/update-user/update-user.controller";
-import { UpdateUserPasswordController } from "../controllers/user/update-user-password/update-user-password.controller";
 import { createUserControllerFactory } from "../factories/controllers/create-user.controller";
 import { getUserControllerFactory } from "../factories/controllers/get-user.controller";
 import { getUsersControllerFactory } from "../factories/controllers/get-users.controller";
