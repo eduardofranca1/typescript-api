@@ -1,7 +1,5 @@
 import "reflect-metadata";
 import { container } from "tsyringe";
-import { ICreateUserRepository } from "./repositories/user/create-user/create-user.repository";
-import { CreateUserRepository } from "./repositories/user/create-user/create-user-impl.repository";
 import { IDeleteUserRepository } from "./repositories/user/delete-user/delete-user.repository";
 import { DeleteUserRepository } from "./repositories/user/delete-user/delete-user-impl.repository";
 import { IGetUserRepository } from "./repositories/user/get-user/get-user.repository";
@@ -12,8 +10,6 @@ import { IUpdateUserRepository } from "./repositories/user/update-user/update-us
 import { UpdateUserRepository } from "./repositories/user/update-user/update-user-impl.repository";
 import { IUpdateUserPasswordRepository } from "./repositories/user/update-user-password/update-user-password.repository";
 import { UpdateUserPasswordRepository } from "./repositories/user/update-user-password/update-user-password-impl.repository";
-import { ICreateUserService } from "./services/user/create-user/create-user.service";
-import { CreateUserService } from "./services/user/create-user/create-user-impl.service";
 import { IDeleteUserService } from "./services/user/delete-user/delete-user.service";
 import { DeleteUserService } from "./services/user/delete-user/delete-user-impl.service";
 import { IGetUserService } from "./services/user/get-user/get-user.service";
@@ -24,14 +20,6 @@ import { IUpdateUserService } from "./services/user/update-user/update-user.serv
 import { UpdateUserService } from "./services/user/update-user/update-user-impl.service";
 import { IUpdateUserPasswordService } from "./services/user/update-user-password/update-user-password.service";
 import { UpdateUserPasswordService } from "./services/user/update-user-password/update-user-password-impl.service";
-
-container.register<ICreateUserRepository>("ICreateUserRepository", {
-  useClass: CreateUserRepository,
-});
-
-container.register<ICreateUserService>("ICreateUserService", {
-  useClass: CreateUserService,
-});
 
 container.register<IGetUsersRepository>("IGetUsersRepository", {
   useClass: GetUsersRepository,

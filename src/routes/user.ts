@@ -1,7 +1,6 @@
 import { Router } from "express";
 import { container } from "tsyringe";
-import { CreateUserController } from "../controllers/user/create-user/create-user.controller";
-import { validateRequest } from "../middlewares/validate-request";
+import { extractZodErrors } from "../middlewares/validate-request";
 import {
   createUserSchema,
   requestIdSchema,
@@ -13,10 +12,11 @@ import { GetUserController } from "../controllers/user/get-user/get-user.control
 import { DeleteUserController } from "../controllers/user/delete-user/delete-user.controller";
 import { UpdateUserController } from "../controllers/user/update-user/update-user.controller";
 import { UpdateUserPasswordController } from "../controllers/user/update-user-password/update-user-password.controller";
+import { createUserControllerFactory } from "../factories/controllers/create-user.controller";
 
 const router = Router();
 
-const createUserController = container.resolve(CreateUserController);
+const { createUserController } = createUserControllerFactory();
 const getUsersController = container.resolve(GetUsersController);
 const getUserController = container.resolve(GetUserController);
 const updateUserController = container.resolve(UpdateUserController);
@@ -27,7 +27,7 @@ const deleteUserController = container.resolve(DeleteUserController);
 
 router.post(
   "/",
-  validateRequest(createUserSchema, "body"),
+  extractZodErrors(createUserSchema, "body"),
   createUserController.createUser
 );
 
@@ -35,27 +35,27 @@ router.get("/", getUsersController.getUsers);
 
 router.get(
   "/get-user/:id",
-  validateRequest(requestIdSchema, "params"),
+  extractZodErrors(requestIdSchema, "params"),
   getUserController.getUser
 );
 
 router.put(
   "/:id",
-  validateRequest(requestIdSchema, "params"),
-  validateRequest(updateUserSchema, "body"),
+  extractZodErrors(requestIdSchema, "params"),
+  extractZodErrors(updateUserSchema, "body"),
   updateUserController.updateUser
 );
 
 router.put(
   "/update-password/:id",
-  validateRequest(requestIdSchema, "params"),
-  validateRequest(updatePasswordSchema, "body"),
+  extractZodErrors(requestIdSchema, "params"),
+  extractZodErrors(updatePasswordSchema, "body"),
   updateUserPasswordController.updatePassword
 );
 
 router.delete(
   "/:id",
-  validateRequest(requestIdSchema, "params"),
+  extractZodErrors(requestIdSchema, "params"),
   deleteUserController.deleteUser
 );
 

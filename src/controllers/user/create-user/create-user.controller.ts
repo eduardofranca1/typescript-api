@@ -1,14 +1,9 @@
 import { Request, Response } from "express";
-import { injectable, inject } from "tsyringe";
 import { ICreateUserService } from "../../../services/user/create-user/create-user.service";
 import { CreateUserSchema } from "../../../schemas";
 
-@injectable()
 export class CreateUserController {
-  constructor(
-    @inject("ICreateUserService")
-    private readonly createUserService: ICreateUserService
-  ) {}
+  constructor(private readonly createUserService: ICreateUserService) {}
 
   createUser = async (
     request: Request<{}, {}, CreateUserSchema>,

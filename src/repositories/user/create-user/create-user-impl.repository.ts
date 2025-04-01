@@ -1,5 +1,3 @@
-import "reflect-metadata";
-import { injectable } from "tsyringe";
 import moment from "moment";
 import { MongoClient } from "../../../database/mongo";
 import {
@@ -10,7 +8,6 @@ import {
 import { hashPassword } from "../../../utils/hash-password";
 import { ICreateUserRepository } from "./create-user.repository";
 
-@injectable()
 export class CreateUserRepository implements ICreateUserRepository {
   async createUser(params: ICreateUserParams): Promise<IUserResponse> {
     const password = await hashPassword(params.password);
