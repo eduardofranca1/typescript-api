@@ -1,4 +1,3 @@
-import "./container";
 import express from "express";
 import cors from "cors";
 import Routers from "./routes/routes";
