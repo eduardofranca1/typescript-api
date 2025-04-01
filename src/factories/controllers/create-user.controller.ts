@@ -4,11 +4,8 @@ import { CreateUserService } from "../../services/user/create-user/create-user-i
 
 export const createUserControllerFactory = () => {
   const createUserRepository = new CreateUserRepository();
-
   const createUserService = new CreateUserService(createUserRepository);
-
   const createUserController = new CreateUserController(createUserService);
-
   return {
     createUserController,
   };

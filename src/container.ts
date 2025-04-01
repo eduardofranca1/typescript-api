@@ -2,28 +2,16 @@ import "reflect-metadata";
 import { container } from "tsyringe";
 import { IDeleteUserRepository } from "./repositories/user/delete-user/delete-user.repository";
 import { DeleteUserRepository } from "./repositories/user/delete-user/delete-user-impl.repository";
-import { IGetUsersRepository } from "./repositories/user/get-users/get-users.repository";
-import { GetUsersRepository } from "./repositories/user/get-users/get-users-impl.repository";
 import { IUpdateUserRepository } from "./repositories/user/update-user/update-user.repository";
 import { UpdateUserRepository } from "./repositories/user/update-user/update-user-impl.repository";
 import { IUpdateUserPasswordRepository } from "./repositories/user/update-user-password/update-user-password.repository";
 import { UpdateUserPasswordRepository } from "./repositories/user/update-user-password/update-user-password-impl.repository";
 import { IDeleteUserService } from "./services/user/delete-user/delete-user.service";
 import { DeleteUserService } from "./services/user/delete-user/delete-user-impl.service";
-import { IGetUsersService } from "./services/user/get-users/get-users.service";
-import { GetUsersService } from "./services/user/get-users/get-users-impl.service";
 import { IUpdateUserService } from "./services/user/update-user/update-user.service";
 import { UpdateUserService } from "./services/user/update-user/update-user-impl.service";
 import { IUpdateUserPasswordService } from "./services/user/update-user-password/update-user-password.service";
 import { UpdateUserPasswordService } from "./services/user/update-user-password/update-user-password-impl.service";
-
-container.register<IGetUsersRepository>("IGetUsersRepository", {
-  useClass: GetUsersRepository,
-});
-
-container.register<IGetUsersService>("IGetUsersService", {
-  useClass: GetUsersService,
-});
 
 container.register<IUpdateUserRepository>("IUpdateUserRepository", {
   useClass: UpdateUserRepository,
