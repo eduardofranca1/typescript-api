@@ -1,11 +1,8 @@
-import "reflect-metadata";
-import { injectable } from "tsyringe";
 import { ObjectId } from "mongodb";
 import { MongoClient } from "../../../database/mongo";
 import { IUserResponse, MongoUserSchema } from "../../../types";
 import { IGetUserRepository } from "./get-user.repository";
 
-@injectable()
 export class GetUserRepository implements IGetUserRepository {
   async getUser(id: string): Promise<IUserResponse | null> {
     const result = await MongoClient.db

@@ -8,17 +8,17 @@ import {
   updateUserSchema,
 } from "../schemas";
 import { GetUsersController } from "../controllers/user/get-users/get-users.controller";
-import { GetUserController } from "../controllers/user/get-user/get-user.controller";
 import { DeleteUserController } from "../controllers/user/delete-user/delete-user.controller";
 import { UpdateUserController } from "../controllers/user/update-user/update-user.controller";
 import { UpdateUserPasswordController } from "../controllers/user/update-user-password/update-user-password.controller";
 import { createUserControllerFactory } from "../factories/controllers/create-user.controller";
+import { getUserControllerFactory } from "../factories/controllers/get-user.controller";
 
 const router = Router();
 
 const { createUserController } = createUserControllerFactory();
 const getUsersController = container.resolve(GetUsersController);
-const getUserController = container.resolve(GetUserController);
+const { getUserController } = getUserControllerFactory();
 const updateUserController = container.resolve(UpdateUserController);
 const updateUserPasswordController = container.resolve(
   UpdateUserPasswordController
