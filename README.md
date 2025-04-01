@@ -1,6 +1,6 @@
 # Node REST API
 
-This project was created using TypeScript, SOLID principles, and Design Patterns
+This project was created using TypeScript, SOLID principles, and Design Patterns. The focus of this project is to show how to implement the SOLID principles and Design Patterns (Dependency Injection and Factory Method), and I am not worried about folder architecture.
 
 ### Technologies:
 

@@ -1,24 +1,25 @@
-import { Request, Response } from "express";
 import { ICreateUserService } from "../../services/user/create-user/create-user.service";
-import { CreateUserSchema } from "../../schemas";
+import { Controller, IHttpRequest, IHttpResponse } from "../controller";
+import { ICreateUserParams, IUserResponse } from "../../types";
+import { badRequest, created, serverError } from "../../helpers/helpers";
 
-export class CreateUserController {
+export class CreateUserController implements Controller {
   constructor(private readonly createUserService: ICreateUserService) {}
-
-  createUser = async (
-    request: Request<{}, {}, CreateUserSchema>,
-    response: Response
-  ) => {
+  async handle(
+    request: IHttpRequest<ICreateUserParams>
+  ): Promise<IHttpResponse<IUserResponse | string>> {
     try {
-      const { name, email, password } = request.body;
-      const result = await this.createUserService.createUser({
-        name,
-        email,
-        password,
-      });
-      response.status(201).json(result);
-    } catch (error: any) {
-      response.status(error.code).json(error.message);
+      const { body } = request;
+
+      if (!body) {
+        return badRequest("Please specify the body");
+      }
+
+      const result = await this.createUserService.createUser(body);
+
+      return created(result);
+    } catch (error) {
+      return serverError();
     }
-  };
+  }
 }

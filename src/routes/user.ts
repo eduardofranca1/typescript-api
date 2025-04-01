@@ -25,7 +25,12 @@ const { deleteUserController } = deleteUserControllerFactory();
 router.post(
   "/",
   extractZodErrors(createUserSchema, "body"),
-  createUserController.createUser
+  async (req, res) => {
+    const response = await createUserController.handle({
+      body: req.body,
+    });
+    res.status(response.statusCode).json(response.body);
+  }
 );
 
 router.get("/", getUsersController.getUsers);
