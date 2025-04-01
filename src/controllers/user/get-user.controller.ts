@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { IGetUserService } from "../../../services/user/get-user/get-user.service";
-import { RequestIdSchema } from "../../../schemas";
+import { IGetUserService } from "../../services/user/get-user/get-user.service";
+import { RequestIdSchema } from "../../schemas";
 
 export class GetUserController {
   constructor(private readonly getUserService: IGetUserService) {}

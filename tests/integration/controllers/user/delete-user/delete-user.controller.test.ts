@@ -1,7 +1,7 @@
 import request from "supertest";
 import express from "express";
 import { IDeleteUserService } from "../../../../../src/services/user/delete-user/delete-user.service";
-import { DeleteUserController } from "../../../../../src/controllers/user/delete-user/delete-user.controller";
+import { DeleteUserController } from "../../../../../src/controllers/user/delete-user.controller";
 
 const app = express();
 app.use(express.json());

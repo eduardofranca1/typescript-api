@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { IGetUsersService } from "../../../services/user/get-users/get-users.service";
+import { IGetUsersService } from "../../services/user/get-users/get-users.service";
 
 export class GetUsersController {
   constructor(private readonly getUsersService: IGetUsersService) {}

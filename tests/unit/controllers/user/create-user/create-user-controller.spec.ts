@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { ICreateUserService } from "../../../../../src/services/user/create-user/create-user.service";
 import { ICreateUserParams, IUserResponse } from "../../../../../src/types";
 import { CreateUserSchema } from "../../../../../src/schemas";
-import { CreateUserController } from "../../../../../src/controllers/user/create-user/create-user.controller";
+import { CreateUserController } from "../../../../../src/controllers/user/create-user.controller";
 
 class CreateUserServiceMock implements ICreateUserService {
   async createUser(params: ICreateUserParams): Promise<IUserResponse> {

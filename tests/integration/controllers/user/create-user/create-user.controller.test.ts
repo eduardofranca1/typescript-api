@@ -2,7 +2,7 @@ import request from "supertest";
 import express from "express";
 import { ICreateUserService } from "../../../../../src/services/user/create-user/create-user.service";
 import { ICreateUserParams, IUserResponse } from "../../../../../src/types";
-import { CreateUserController } from "../../../../../src/controllers/user/create-user/create-user.controller";
+import { CreateUserController } from "../../../../../src/controllers/user/create-user.controller";
 
 const app = express();
 app.use(express.json());

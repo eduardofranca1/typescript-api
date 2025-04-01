@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { IDeleteUserService } from "../../../../../src/services/user/delete-user/delete-user.service";
 import { RequestIdSchema } from "../../../../../src/schemas";
-import { DeleteUserController } from "../../../../../src/controllers/user/delete-user/delete-user.controller";
+import { DeleteUserController } from "../../../../../src/controllers/user/delete-user.controller";
 
 class DeleteUserServiceMock implements IDeleteUserService {
   async deleteUser(id: string): Promise<void> {

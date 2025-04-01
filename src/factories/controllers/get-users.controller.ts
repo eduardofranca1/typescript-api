@@ -1,4 +1,4 @@
-import { GetUsersController } from "../../controllers/user/get-users/get-users.controller";
+import { GetUsersController } from "../../controllers/user/get-users.controller";
 import { GetUsersRepository } from "../../repositories/user/get-users/get-users-impl.repository";
 import { GetUsersService } from "../../services/user/get-users/get-users-impl.service";
 

@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { IGetUsersService } from "../../../../../src/services/user/get-users/get-users.service";
 import { IUserResponse } from "../../../../../src/types";
-import { GetUsersController } from "../../../../../src/controllers/user/get-users/get-users.controller";
+import { GetUsersController } from "../../../../../src/controllers/user/get-users.controller";
 
 class GetUsersServiceMock implements IGetUsersService {
   async getUsers(): Promise<IUserResponse[]> {

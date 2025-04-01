@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { IDeleteUserService } from "../../../services/user/delete-user/delete-user.service";
-import { RequestIdSchema } from "../../../schemas";
+import { IDeleteUserService } from "../../services/user/delete-user/delete-user.service";
+import { RequestIdSchema } from "../../schemas";
 
 export class DeleteUserController {
   constructor(private readonly deleteUserService: IDeleteUserService) {}

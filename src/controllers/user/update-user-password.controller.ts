@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { IUpdateUserPasswordService } from "../../../services/user/update-user-password/update-user-password.service";
-import { RequestIdSchema, UpdatePasswordSchema } from "../../../schemas";
+import { IUpdateUserPasswordService } from "../../services/user/update-user-password/update-user-password.service";
+import { RequestIdSchema, UpdatePasswordSchema } from "../../schemas";
 
 export class UpdateUserPasswordController {
   constructor(

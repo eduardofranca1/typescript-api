@@ -1,4 +1,4 @@
-import { UpdateUserPasswordController } from "../../controllers/user/update-user-password/update-user-password.controller";
+import { UpdateUserPasswordController } from "../../controllers/user/update-user-password.controller";
 import { UpdateUserPasswordRepository } from "../../repositories/user/update-user-password/update-user-password-impl.repository";
 import { UpdateUserPasswordService } from "../../services/user/update-user-password/update-user-password-impl.service";
 

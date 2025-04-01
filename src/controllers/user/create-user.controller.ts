@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { ICreateUserService } from "../../../services/user/create-user/create-user.service";
-import { CreateUserSchema } from "../../../schemas";
+import { ICreateUserService } from "../../services/user/create-user/create-user.service";
+import { CreateUserSchema } from "../../schemas";
 
 export class CreateUserController {
   constructor(private readonly createUserService: ICreateUserService) {}

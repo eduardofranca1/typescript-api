@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { IUpdateUserService } from "../../../services/user/update-user/update-user.service";
-import { RequestIdSchema, UpdateUserSchema } from "../../../schemas";
+import { IUpdateUserService } from "../../services/user/update-user/update-user.service";
+import { RequestIdSchema, UpdateUserSchema } from "../../schemas";
 
 export class UpdateUserController {
   constructor(private readonly updateUserService: IUpdateUserService) {}
