@@ -7,13 +7,12 @@ import {
   updatePasswordSchema,
   updateUserSchema,
 } from "../schemas";
-import { GetUsersController } from "../controllers/user/get-users/get-users.controller";
-import { DeleteUserController } from "../controllers/user/delete-user/delete-user.controller";
 import { UpdateUserController } from "../controllers/user/update-user/update-user.controller";
 import { UpdateUserPasswordController } from "../controllers/user/update-user-password/update-user-password.controller";
 import { createUserControllerFactory } from "../factories/controllers/create-user.controller";
 import { getUserControllerFactory } from "../factories/controllers/get-user.controller";
 import { getUsersControllerFactory } from "../factories/controllers/get-users.controller";
+import { deleteUserControllerFactory } from "../factories/controllers/delete-user.controller";
 
 const router = Router();
 
@@ -24,7 +23,7 @@ const updateUserController = container.resolve(UpdateUserController);
 const updateUserPasswordController = container.resolve(
   UpdateUserPasswordController
 );
-const deleteUserController = container.resolve(DeleteUserController);
+const { deleteUserController } = deleteUserControllerFactory();
 
 router.post(
   "/",
