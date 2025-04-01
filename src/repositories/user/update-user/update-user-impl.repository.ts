@@ -1,12 +1,9 @@
-import "reflect-metadata";
-import { injectable } from "tsyringe";
 import { ObjectId } from "mongodb";
 import moment from "moment";
 import { IUpdateUser, IUserResponse, MongoUserSchema } from "../../../types";
 import { IUpdateUserRepository } from "./update-user.repository";
 import { MongoClient } from "../../../database/mongo";
 
-@injectable()
 export class UpdateUserRepository implements IUpdateUserRepository {
   async updateUser(id: string, params: IUpdateUser): Promise<IUserResponse> {
     const updatedAt = moment().format("YYYY-MM-DDTHH:mm:ss");

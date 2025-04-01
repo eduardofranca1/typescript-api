@@ -1,15 +1,9 @@
-import { inject, injectable } from "tsyringe";
 import { Request, Response } from "express";
 import { IUpdateUserService } from "../../../services/user/update-user/update-user.service";
 import { RequestIdSchema, UpdateUserSchema } from "../../../schemas";
 
-@injectable()
 export class UpdateUserController {
-  constructor(
-    @inject("IUpdateUserService")
-    private readonly updateUserService: IUpdateUserService
-  ) {}
-
+  constructor(private readonly updateUserService: IUpdateUserService) {}
   updateUser = async (
     request: Request<RequestIdSchema, {}, UpdateUserSchema>,
     response: Response

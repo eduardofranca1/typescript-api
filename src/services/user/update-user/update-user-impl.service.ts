@@ -1,5 +1,3 @@
-import "reflect-metadata";
-import { inject, injectable } from "tsyringe";
 import { ObjectId } from "mongodb";
 import { MongoClient } from "../../../database/mongo";
 import { IUpdateUser, IUserResponse, MongoUserSchema } from "../../../types";
@@ -8,12 +6,8 @@ import { IUpdateUserRepository } from "../../../repositories/user/update-user/up
 import { HttpException } from "../../../exceptions/exception";
 import { HttpEnumStatusCode } from "../../../exceptions/http-status-code";
 
-@injectable()
 export class UpdateUserService implements IUpdateUserService {
-  constructor(
-    @inject("IUpdateUserRepository")
-    private readonly updateUpserRepository: IUpdateUserRepository
-  ) {}
+  constructor(private readonly updateUpserRepository: IUpdateUserRepository) {}
   async updateUser(id: string, params: IUpdateUser): Promise<IUserResponse> {
     const user = await MongoClient.db
       .collection<MongoUserSchema>("users")

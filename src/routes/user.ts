@@ -13,13 +13,14 @@ import { createUserControllerFactory } from "../factories/controllers/create-use
 import { getUserControllerFactory } from "../factories/controllers/get-user.controller";
 import { getUsersControllerFactory } from "../factories/controllers/get-users.controller";
 import { deleteUserControllerFactory } from "../factories/controllers/delete-user.controller";
+import { updateUserControllerFactory } from "../factories/controllers/update-user.controller";
 
 const router = Router();
 
 const { createUserController } = createUserControllerFactory();
 const { getUsersController } = getUsersControllerFactory();
 const { getUserController } = getUserControllerFactory();
-const updateUserController = container.resolve(UpdateUserController);
+const { updateUserController } = updateUserControllerFactory();
 const updateUserPasswordController = container.resolve(
   UpdateUserPasswordController
 );
