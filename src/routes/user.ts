@@ -51,7 +51,13 @@ router.put(
   "/:id",
   extractZodErrors(requestIdSchema, "params"),
   extractZodErrors(updateUserSchema, "body"),
-  updateUserController.updateUser
+  async (req, res) => {
+    const response = await updateUserController.handle({
+      params: req.params,
+      body: req.body,
+    });
+    res.status(response.statusCode).json(response.body);
+  }
 );
 
 router.put(

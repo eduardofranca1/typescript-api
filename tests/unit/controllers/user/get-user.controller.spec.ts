@@ -6,7 +6,7 @@ import { IHttpRequest } from "../../../controllers/controller";
 class GetUserServiceMock implements IGetUserService {
   async getUser(id: string): Promise<IUserResponse> {
     return Promise.resolve({
-      _id: "user-id",
+      _id: id,
       name: "Curry",
       email: "curry@email.com",
       createdAt: "2025-02-11T08:00:00",
@@ -18,7 +18,7 @@ class GetUserServiceMock implements IGetUserService {
 describe("Get_User_Controller_Unit_Test", () => {
   it("should return 200 status code and the user response", async () => {
     const makeHttpRequest = (id: string): IHttpRequest<{ id: string }> => ({
-      params: id,
+      params: { id },
     });
 
     const controller = new GetUserController(new GetUserServiceMock());
