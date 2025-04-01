@@ -1,6 +1,6 @@
 import { ObjectId } from "mongodb";
 import { MongoClient } from "../../../database/mongo";
-import { IUserResponse, MongoUserSchema } from "../../../types";
+import { IUserResponse, MongoUserSchema } from "../../../models/user";
 import { IGetUserRepository } from "./get-user.repository";
 
 export class GetUserRepository implements IGetUserRepository {

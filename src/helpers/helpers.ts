@@ -1,5 +1,5 @@
 import { IHttpResponse } from "../controllers/controller";
-import { IUserResponse } from "../types";
+import { IUserResponse } from "../models/user";
 
 export const ok = <T extends string | IUserResponse | IUserResponse[] | []>(
   body: T
@@ -25,4 +25,12 @@ export const badRequest = (message: string): IHttpResponse<string> => {
 export const serverError = (): IHttpResponse<string> => ({
   statusCode: 500,
   body: "Server error",
+});
+
+export const error = (
+  statusCode: number,
+  body: string
+): IHttpResponse<string> => ({
+  statusCode,
+  body,
 });

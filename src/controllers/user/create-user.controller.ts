@@ -1,6 +1,6 @@
 import { ICreateUserService } from "../../services/user/create-user/create-user.service";
 import { Controller, IHttpRequest, IHttpResponse } from "../controller";
-import { ICreateUserParams, IUserResponse } from "../../types";
+import { ICreateUserParams, IUserResponse } from "../../models/user";
 import { badRequest, created, serverError } from "../../helpers/helpers";
 
 export class CreateUserController implements Controller {

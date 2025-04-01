@@ -4,7 +4,7 @@ import {
   ICreateUserParams,
   IUserResponse,
   MongoUserSchema,
-} from "../../../types";
+} from "../../../models/user";
 import { hashPassword } from "../../../utils/hash-password";
 import { ICreateUserRepository } from "./create-user.repository";
 

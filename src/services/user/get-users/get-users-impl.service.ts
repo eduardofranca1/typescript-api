@@ -1,5 +1,5 @@
 import { IGetUsersService } from "./get-users.service";
-import { IUserResponse } from "../../../types";
+import { IUserResponse } from "../../../models/user";
 import { IGetUsersRepository } from "../../../repositories/user/get-users/get-users.repository";
 
 export class GetUsersService implements IGetUsersService {

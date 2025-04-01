@@ -1,5 +1,5 @@
 import { IGetUsersService } from "../../../../src/services/user/get-users/get-users.service";
-import { IUserResponse } from "../../../../src/types";
+import { IUserResponse } from "../../../../src/models/user";
 import { GetUsersController } from "../../../../src/controllers/user/get-users.controller";
 
 class GetUsersServiceMock implements IGetUsersService {

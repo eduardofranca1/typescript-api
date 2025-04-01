@@ -1,6 +1,6 @@
 import { IGetUsersService } from "../../services/user/get-users/get-users.service";
 import { Controller, IHttpResponse } from "../controller";
-import { IUserResponse } from "../../types";
+import { IUserResponse } from "../../models/user";
 import { ok, serverError } from "../../helpers/helpers";
 
 export class GetUsersController implements Controller {

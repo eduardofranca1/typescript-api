@@ -1,6 +1,10 @@
 import { ObjectId } from "mongodb";
 import moment from "moment";
-import { IUpdateUser, IUserResponse, MongoUserSchema } from "../../../types";
+import {
+  IUpdateUser,
+  IUserResponse,
+  MongoUserSchema,
+} from "../../../models/user";
 import { IUpdateUserRepository } from "./update-user.repository";
 import { MongoClient } from "../../../database/mongo";
 

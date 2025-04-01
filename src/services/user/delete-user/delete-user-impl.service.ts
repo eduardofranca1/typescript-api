@@ -1,7 +1,7 @@
 import { ObjectId } from "mongodb";
 import { IDeleteUserService } from "./delete-user.service";
 import { MongoClient } from "../../../database/mongo";
-import { MongoUserSchema } from "../../../types";
+import { MongoUserSchema } from "../../../models/user";
 import { HttpException } from "../../../exceptions/exception";
 import { HttpEnumStatusCode } from "../../../exceptions/http-status-code";
 import { IDeleteUserRepository } from "../../../repositories/user/delete-user/delete-user.repository";

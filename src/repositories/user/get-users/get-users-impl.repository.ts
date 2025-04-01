@@ -1,5 +1,5 @@
 import { MongoClient } from "../../../database/mongo";
-import { IUserResponse, MongoUserSchema } from "../../../types";
+import { IUserResponse, MongoUserSchema } from "../../../models/user";
 import { IGetUsersRepository } from "./get-users.repository";
 
 export class GetUsersRepository implements IGetUsersRepository {

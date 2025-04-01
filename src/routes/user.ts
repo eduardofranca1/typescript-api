@@ -41,7 +41,10 @@ router.get("/", async (req, res) => {
 router.get(
   "/get-user/:id",
   extractZodErrors(requestIdSchema, "params"),
-  getUserController.getUser
+  async (req, res) => {
+    const response = await getUserController.handle({ params: req.params });
+    res.status(response.statusCode).json(response.body);
+  }
 );
 
 router.put(

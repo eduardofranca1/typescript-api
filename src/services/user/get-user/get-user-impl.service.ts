@@ -1,4 +1,4 @@
-import { IUserResponse } from "../../../types";
+import { IUserResponse } from "../../../models/user";
 import { IGetUserService } from "./get-user.service";
 import { IGetUserRepository } from "../../../repositories/user/get-user/get-user.repository";
 import { HttpException } from "../../../exceptions/exception";

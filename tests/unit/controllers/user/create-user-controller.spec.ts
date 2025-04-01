@@ -1,5 +1,5 @@
 import { ICreateUserService } from "../../../../src/services/user/create-user/create-user.service";
-import { ICreateUserParams, IUserResponse } from "../../../../src/types";
+import { ICreateUserParams, IUserResponse } from "../../../../src/models/user";
 import { CreateUserController } from "../../../../src/controllers/user/create-user.controller";
 
 class CreateUserServiceMock implements ICreateUserService {

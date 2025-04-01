@@ -1,6 +1,10 @@
 import { ObjectId } from "mongodb";
 import { MongoClient } from "../../../database/mongo";
-import { IUpdateUser, IUserResponse, MongoUserSchema } from "../../../types";
+import {
+  IUpdateUser,
+  IUserResponse,
+  MongoUserSchema,
+} from "../../../models/user";
 import { IUpdateUserService } from "./update-user.service";
 import { IUpdateUserRepository } from "../../../repositories/user/update-user/update-user.repository";
 import { HttpException } from "../../../exceptions/exception";

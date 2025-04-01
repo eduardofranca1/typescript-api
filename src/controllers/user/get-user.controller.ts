@@ -1,16 +1,19 @@
-import { Request, Response } from "express";
 import { IGetUserService } from "../../services/user/get-user/get-user.service";
-import { RequestIdSchema } from "../../schemas";
+import { Controller, IHttpRequest, IHttpResponse } from "../controller";
+import { IUserResponse } from "../../models/user";
+import { ok, error } from "../../helpers/helpers";
 
-export class GetUserController {
+export class GetUserController implements Controller {
   constructor(private readonly getUserService: IGetUserService) {}
 
-  getUser = async (request: Request<RequestIdSchema>, response: Response) => {
+  async handle(
+    request: IHttpRequest<{ id: string }>
+  ): Promise<IHttpResponse<IUserResponse | string>> {
     try {
-      const result = await this.getUserService.getUser(request.params.id);
-      response.status(200).json(result);
-    } catch (error: any) {
-      response.status(error.code).json(error.message);
+      const response = await this.getUserService.getUser(request.params.id);
+      return ok<IUserResponse>(response);
+    } catch (err: any) {
+      return error(err.code, err.message);
     }
-  };
+  }
 }

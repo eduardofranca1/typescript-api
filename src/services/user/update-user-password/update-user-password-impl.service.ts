@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import { IUpdateUserPassword } from "../../../types";
+import { IUpdateUserPassword } from "../../../models/user";
 import { IUpdateUserPasswordService } from "./update-user-password.service";
 import { IUpdateUserPasswordRepository } from "../../../repositories/user/update-user-password/update-user-password.repository";
 import { compareHashPassword } from "../../../utils/compare-hash-password";

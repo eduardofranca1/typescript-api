@@ -1,4 +1,4 @@
-import { ICreateUserParams, IUserResponse } from "../../../types";
+import { ICreateUserParams, IUserResponse } from "../../../models/user";
 import { ICreateUserService } from "./create-user.service";
 import { ICreateUserRepository } from "../../../repositories/user/create-user/create-user.repository";
 
