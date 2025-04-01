@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import request from "supertest";
 import express from "express";
 import { IUpdateUserPasswordService } from "../../../../../src/services/user/update-user-password/update-user-password.service";

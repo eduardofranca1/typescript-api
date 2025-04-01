@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import { Request, Response } from "express";
 import { IDeleteUserService } from "../../../../../src/services/user/delete-user/delete-user.service";
 import { RequestIdSchema } from "../../../../../src/schemas";

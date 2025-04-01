@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import "./container";
 import express from "express";
 import cors from "cors";

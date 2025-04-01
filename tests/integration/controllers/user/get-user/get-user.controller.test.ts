@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import request from "supertest";
 import express from "express";
 import { IUserResponse } from "../../../../../src/types";

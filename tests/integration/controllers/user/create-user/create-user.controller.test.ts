@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import request from "supertest";
 import express from "express";
 import { ICreateUserService } from "../../../../../src/services/user/create-user/create-user.service";

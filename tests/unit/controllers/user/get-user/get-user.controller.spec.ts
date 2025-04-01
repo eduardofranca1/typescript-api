@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import { Request, Response } from "express";
 import { IGetUserService } from "../../../../../src/services/user/get-user/get-user.service";
 import { IUserResponse } from "../../../../../src/types";

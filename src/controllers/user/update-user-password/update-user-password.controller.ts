@@ -1,12 +1,9 @@
-import { inject, injectable } from "tsyringe";
 import { Request, Response } from "express";
 import { IUpdateUserPasswordService } from "../../../services/user/update-user-password/update-user-password.service";
 import { RequestIdSchema, UpdatePasswordSchema } from "../../../schemas";
 
-@injectable()
 export class UpdateUserPasswordController {
   constructor(
-    @inject("IUpdateUserPasswordService")
     private readonly updateUserPasswordService: IUpdateUserPasswordService
   ) {}
 

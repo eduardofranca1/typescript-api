@@ -14,6 +14,7 @@ import { getUserControllerFactory } from "../factories/controllers/get-user.cont
 import { getUsersControllerFactory } from "../factories/controllers/get-users.controller";
 import { deleteUserControllerFactory } from "../factories/controllers/delete-user.controller";
 import { updateUserControllerFactory } from "../factories/controllers/update-user.controller";
+import { updateUserPasswordControllerFactory } from "../factories/controllers/update-user-password.controller";
 
 const router = Router();
 
@@ -21,9 +22,7 @@ const { createUserController } = createUserControllerFactory();
 const { getUsersController } = getUsersControllerFactory();
 const { getUserController } = getUserControllerFactory();
 const { updateUserController } = updateUserControllerFactory();
-const updateUserPasswordController = container.resolve(
-  UpdateUserPasswordController
-);
+const { updateUserPasswordController } = updateUserPasswordControllerFactory();
 const { deleteUserController } = deleteUserControllerFactory();
 
 router.post(

@@ -1,12 +1,9 @@
-import "reflect-metadata";
-import { injectable } from "tsyringe";
 import moment from "moment";
 import { ObjectId } from "mongodb";
 import { IUpdateUserPasswordRepository } from "./update-user-password.repository";
 import { MongoClient } from "../../../database/mongo";
 import { hashPassword } from "../../../utils/hash-password";
 
-@injectable()
 export class UpdateUserPasswordRepository
   implements IUpdateUserPasswordRepository
 {
