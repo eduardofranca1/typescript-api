@@ -1,6 +1,13 @@
 import { IHttpResponse } from "../controllers/controller";
 import { IUserResponse } from "../types";
 
+export const ok = <T extends string | IUserResponse | IUserResponse[] | []>(
+  body: T
+): IHttpResponse<T> => ({
+  statusCode: 200,
+  body,
+});
+
 export const created = <T extends IUserResponse>(
   body: T
 ): IHttpResponse<T> => ({

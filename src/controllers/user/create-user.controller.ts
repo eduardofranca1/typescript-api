@@ -17,7 +17,7 @@ export class CreateUserController implements Controller {
 
       const result = await this.createUserService.createUser(body);
 
-      return created(result);
+      return created<IUserResponse>(result);
     } catch (error) {
       return serverError();
     }

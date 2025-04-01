@@ -33,7 +33,10 @@ router.post(
   }
 );
 
-router.get("/", getUsersController.getUsers);
+router.get("/", async (req, res) => {
+  const response = await getUsersController.handle();
+  res.status(response.statusCode).json(response.body);
+});
 
 router.get(
   "/get-user/:id",

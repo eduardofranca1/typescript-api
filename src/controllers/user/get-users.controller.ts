@@ -1,14 +1,16 @@
-import { Request, Response } from "express";
 import { IGetUsersService } from "../../services/user/get-users/get-users.service";
+import { Controller, IHttpResponse } from "../controller";
+import { IUserResponse } from "../../types";
+import { ok, serverError } from "../../helpers/helpers";
 
-export class GetUsersController {
+export class GetUsersController implements Controller {
   constructor(private readonly getUsersService: IGetUsersService) {}
-  getUsers = async (_request: Request, response: Response) => {
+  async handle(): Promise<IHttpResponse<IUserResponse[] | string>> {
     try {
       const result = await this.getUsersService.getUsers();
-      response.status(200).json(result);
-    } catch (error: any) {
-      response.status(error.code).json(error.message);
+      return ok<IUserResponse[]>(result);
+    } catch (error) {
+      return serverError();
     }
-  };
+  }
 }
