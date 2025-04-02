@@ -1,6 +1,4 @@
-import { Request, Response } from "express";
 import { IUpdateUserService } from "../../services/user/update-user/update-user.service";
-import { RequestIdSchema, UpdateUserSchema } from "../../schemas";
 import { Controller, IHttpRequest, IHttpResponse } from "../controller";
 import { IUpdateUser, IUserResponse } from "../../models/user";
 import { badRequest, error, ok } from "../../helpers/helpers";
