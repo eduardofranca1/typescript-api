@@ -1,6 +1,6 @@
 import { IDeleteUserService } from "../../../../src/services/user/delete-user/delete-user.service";
 import { DeleteUserController } from "../../../../src/controllers/user/delete-user.controller";
-import { IHttpRequest } from "../../../controllers/controller";
+import { IHttpRequest } from "../../../../src/controllers/controller";
 
 class DeleteUserServiceMock implements IDeleteUserService {
   async deleteUser(id: string): Promise<void> {

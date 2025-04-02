@@ -1,7 +1,7 @@
 import { IGetUserService } from "../../../../src/services/user/get-user/get-user.service";
 import { IUserResponse } from "../../../../src/models/user";
 import { GetUserController } from "../../../../src/controllers/user/get-user.controller";
-import { IHttpRequest } from "../../../controllers/controller";
+import { IHttpRequest } from "../../../../src/controllers/controller";
 
 class GetUserServiceMock implements IGetUserService {
   async getUser(id: string): Promise<IUserResponse> {
