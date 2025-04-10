@@ -1,25 +1,25 @@
 {
-  "name": "nodejs-api",
+  "name": "typescript-api",
   "version": "1.0.0",
   "description": "",
   "main": "dist/server.js",
   "scripts": {
     "start": "node dist/src/server.js",
     "dev": "ts-node-dev src/server.ts",
-    "build": "tsc",
+    "build": "rimraf dist && tsc -p tsconfig-build.json",
     "test": "jest --runInBand",
     "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eduardofranca1/nodejs-api.git"
+    "url": "git+https://github.com/eduardofranca1/typescript-api.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/eduardofranca1/nodejs-api/issues"
+    "url": "https://github.com/eduardofranca1/typescript-api/issues"
   },
-  "homepage": "https://github.com/eduardofranca1/nodejs-api#readme",
+  "homepage": "https://github.com/eduardofranca1/typescript-api#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
